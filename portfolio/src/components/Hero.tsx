@@ -17,7 +17,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Hi, I'm Jane Smith
+              Hi, I'm Harsh Maniya
               <span className="block text-indigo-600 dark:text-indigo-400">Computer Science Student</span>
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">

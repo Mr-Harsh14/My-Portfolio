@@ -19,7 +19,7 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
             whileHover={{ scale: 1.05 }}
             className="text-xl font-bold text-gray-900 dark:text-white"
           >
-            Jane Smith
+            Harsh Maniya
           </motion.div>
           
           <div className="flex items-center space-x-6">
