@@ -19,7 +19,11 @@ export default function Header({ isDark, toggleTheme }: HeaderProps) {
             whileHover={{ scale: 1.05 }}
             className="text-xl font-bold text-gray-900 dark:text-white"
           >
-            Harsh Maniya
+            <img 
+              src={isDark ? "/HM logoW.svg" : "/HM logo.svg"} 
+              alt="Harsh Maniya" 
+              className="w-20" 
+            />
           </motion.div>
           
           <div className="flex items-center space-x-6">

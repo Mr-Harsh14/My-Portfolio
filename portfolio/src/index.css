@@ -5,10 +5,16 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply font-bluu;
   }
 
   body {
     @apply antialiased;
+  }
+
+  /* Add scroll margin for sections */
+  section[id] {
+    @apply scroll-mt-32;  /* Adjust this value based on your header height */
   }
 }
 

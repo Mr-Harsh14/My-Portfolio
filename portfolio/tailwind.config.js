@@ -4,21 +4,9 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
-      animation: {
-        'gradient': 'gradient 8s linear infinite',
+      fontFamily: {
+        'bluu': ['Bluu Next', 'serif'],
       },
-      keyframes: {
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center'
-          },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center'
-          }
-        }
-      }
     },
   },
   plugins: [],

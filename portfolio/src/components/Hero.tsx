@@ -7,7 +7,7 @@ export default function Hero() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen pt-20 flex items-center bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800"
+      className="min-h-screen pt-24 flex items-center bg-gradient-to-br from-white to-gray-100 dark:from-gray-900 dark:to-gray-800"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
