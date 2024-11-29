@@ -38,18 +38,18 @@ export default function ProjectCard({ title, description, image, tech, github, d
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+            className="flex items-center text-orange-600 dark:text-orange-400 hover:text-gray-900 dark:hover:text-white "
           >
-            <Github className="w-5 h-5 mr-2" />
+            <Github className="w-5 h-5 mr-2 text-orange-600 dark:text-orange-400" />
             Code
           </a>
           <a
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+            className="flex items-center text-orange-600 dark:text-orange-400 hover:text-gray-900 dark:hover:text-white"
           >
-            <ExternalLink className="w-5 h-5 mr-2" />
+            <ExternalLink className="w-5 h-5 mr-2 text-orange-600 dark:text-orange-400" />
             Demo
           </a>
         </div>

@@ -37,7 +37,7 @@ export default function ContactForm() {
           placeholder="Your message"
         ></textarea>
       </div>
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full bg-orange-600 hover:bg-orange-700">
         Send Message
       </Button>
     </motion.form>

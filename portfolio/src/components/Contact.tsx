@@ -26,7 +26,7 @@ export default function Contact() {
           >
             <div className="flex items-start space-x-4">
               <div className="bg-white dark:bg-gray-800 p-3 rounded-full">
-                <Mail className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                <Mail className="w-6 h-6 text-orange-600 dark:text-orange-400" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Email</h3>
@@ -36,7 +36,7 @@ export default function Contact() {
 
             <div className="flex items-start space-x-4">
               <div className="bg-white dark:bg-gray-800 p-3 rounded-full">
-                <Phone className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                <Phone className="w-6 h-6 text-orange-600 dark:text-orange-400" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Phone</h3>
@@ -46,7 +46,7 @@ export default function Contact() {
 
             <div className="flex items-start space-x-4">
               <div className="bg-white dark:bg-gray-800 p-3 rounded-full">
-                <MapPin className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                <MapPin className="w-6 h-6 text-orange-600 dark:text-orange-400" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">Location</h3>
@@ -67,7 +67,7 @@ export default function Contact() {
               <input
                 type="text"
                 id="name"
-                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent"
+                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 focus:border-transparent"
                 placeholder="Your name"
               />
             </div>
@@ -76,7 +76,7 @@ export default function Contact() {
               <input
                 type="email"
                 id="email"
-                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent"
+                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 focus:border-transparent"
                 placeholder="your@email.com"
               />
             </div>
@@ -85,7 +85,7 @@ export default function Contact() {
               <textarea
                 id="message"
                 rows={4}
-                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-transparent"
+                className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 focus:border-transparent"
                 placeholder="Your message"
               ></textarea>
             </div>
@@ -93,7 +93,7 @@ export default function Contact() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+              className="w-full px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
             >
               Send Message
             </motion.button>
