@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,7 +22,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -31,18 +32,22 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+          <ThemeToggle />
         </div>
 
-        {/* Mobile Navigation Button */}
-        <button
-          className="md:hidden p-2"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          <div className="w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5"></div>
-          <div className="w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5"></div>
-          <div className="w-6 h-0.5 bg-gray-900 dark:bg-white"></div>
-        </button>
+        <div className="flex items-center gap-4 md:hidden">
+          <ThemeToggle />
+          {/* Mobile Navigation Button */}
+          <button
+            className="p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <div className="w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-gray-900 dark:bg-white mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-gray-900 dark:bg-white"></div>
+          </button>
+        </div>
 
         {/* Mobile Navigation Menu */}
         {isMenuOpen && (
