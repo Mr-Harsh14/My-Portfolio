@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import ThemeToggle from './ThemeToggle'
 
@@ -17,8 +18,17 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 py-4">
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-primary">
-          Portfolio
+        <Link href="/" className="flex items-center gap-2">
+          <div className="relative w-8 h-8">
+            <Image
+              src="/images/hazz.png"
+              alt="Harsh Maniya Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="text-2xl font-bold text-primary">Portfolio</span>
         </Link>
 
         {/* Desktop Navigation */}
