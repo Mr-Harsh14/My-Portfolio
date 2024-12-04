@@ -262,12 +262,8 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Skills Section */}
-        <AnimatedSection id="skills" className="section-padding relative">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent dark:via-gray-800/50" />
-            <div className="absolute inset-0 backdrop-blur-[1px]" />
-          </div>
-          <div className="max-w-6xl mx-auto relative">
+        <AnimatedSection id="skills" className="section-padding">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <motion.p 
                 className="text-primary font-medium mb-2"
@@ -275,7 +271,7 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                What I Work With
+                My Expertise
               </motion.p>
               <motion.h2 
                 className="text-3xl md:text-4xl font-bold mb-3"
@@ -283,113 +279,134 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                Skills & Technologies
+                Technical Skills
               </motion.h2>
-              <motion.p
-                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Web Development Skills */}
+              <motion.div
+                className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
               >
-                I work with a variety of technologies across the full stack development spectrum
-              </motion.p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  title: "Frontend Development",
-                  skills: [
-                    { name: "React & Next.js", level: 90 },
-                    { name: "TypeScript", level: 85 },
-                    { name: "Tailwind CSS", level: 90 },
-                    { name: "HTML/CSS", level: 95 },
-                  ],
-                  bgClass: "bg-blue-500/10 dark:bg-blue-500/20"
-                },
-                {
-                  title: "Backend Development",
-                  skills: [
-                    { name: "Node.js", level: 85 },
-                    { name: "Python", level: 80 },
-                    { name: "SQL", level: 85 },
-                    { name: "RESTful APIs", level: 90 },
-                  ],
-                  bgClass: "bg-green-500/10 dark:bg-green-500/20"
-                },
-                {
-                  title: "Tools & Technologies",
-                  skills: [
-                    { name: "Git & GitHub", level: 90 },
-                    { name: "Docker", level: 75 },
-                    { name: "AWS", level: 70 },
-                    { name: "Linux", level: 80 },
-                  ],
-                  bgClass: "bg-purple-500/10 dark:bg-purple-500/20"
-                }
-              ].map((category, index) => (
-                <motion.div
-                  key={category.title}
-                  className={`backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20 ${category.bgClass}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <h3 className="text-lg font-semibold mb-6">{category.title}</h3>
-                  <div className="space-y-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <motion.div
-                        key={skill.name}
-                        className="space-y-2"
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: (index * 0.1) + (skillIndex * 0.1) }}
-                      >
-                        <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium">{skill.name}</span>
-                          <span className="text-xs text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
+                  <span role="img" aria-label="web">🌐</span> Web Development
+                </h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-medium mb-3">Frontend Development</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { name: 'React.js', level: '90%' },
+                        { name: 'Next.js', level: '85%' },
+                        { name: 'TypeScript', level: '85%' },
+                        { name: 'Tailwind CSS', level: '90%' },
+                        { name: 'HTML5/CSS3', level: '95%' },
+                        { name: 'JavaScript', level: '90%' }
+                      ].map((skill) => (
+                        <div key={skill.name} className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-sm font-medium">{skill.name}</span>
+                            <span className="text-xs text-primary">{skill.level}</span>
+                          </div>
+                          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                            <div className="bg-primary h-1.5 rounded-full" style={{ width: skill.level }}></div>
+                          </div>
                         </div>
-                        <div className="h-1.5 bg-white/20 dark:bg-gray-700 rounded-full overflow-hidden">
-                          <motion.div
-                            className="h-full bg-primary dark:bg-primary/80 rounded-full"
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, ease: "easeOut" }}
-                          />
-                        </div>
-                      </motion.div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                  <div>
+                    <h4 className="font-medium mb-3">Backend Development</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { name: 'Node.js', level: '85%' },
+                        { name: 'Express.js', level: '80%' },
+                        { name: 'MongoDB', level: '85%' },
+                        { name: 'RESTful APIs', level: '90%' }
+                      ].map((skill) => (
+                        <div key={skill.name} className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-sm font-medium">{skill.name}</span>
+                            <span className="text-xs text-primary">{skill.level}</span>
+                          </div>
+                          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                            <div className="bg-primary h-1.5 rounded-full" style={{ width: skill.level }}></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
-            {/* Additional Skills */}
-            <motion.div
-              className="mt-8 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Additional skills include: Jest, GraphQL, MongoDB, Redis, CI/CD, and more.
-              </p>
-            </motion.div>
+              {/* Machine Learning Skills */}
+              <motion.div
+                className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
+                  <span role="img" aria-label="ml">🤖</span> Machine Learning
+                </h3>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-medium mb-3">Core ML Skills</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { name: 'Python', level: '90%' },
+                        { name: 'TensorFlow', level: '80%' },
+                        { name: 'PyTorch', level: '75%' },
+                        { name: 'Scikit-learn', level: '85%' },
+                        { name: 'Pandas', level: '90%' },
+                        { name: 'NumPy', level: '85%' }
+                      ].map((skill) => (
+                        <div key={skill.name} className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-sm font-medium">{skill.name}</span>
+                            <span className="text-xs text-primary">{skill.level}</span>
+                          </div>
+                          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                            <div className="bg-primary h-1.5 rounded-full" style={{ width: skill.level }}></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-medium mb-3">ML Areas</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { name: 'Deep Learning', level: '80%' },
+                        { name: 'Computer Vision', level: '75%' },
+                        { name: 'Data Analysis', level: '85%' },
+                        { name: 'NLP', level: '70%' }
+                      ].map((skill) => (
+                        <div key={skill.name} className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
+                          <div className="flex justify-between mb-1">
+                            <span className="text-sm font-medium">{skill.name}</span>
+                            <span className="text-xs text-primary">{skill.level}</span>
+                          </div>
+                          <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                            <div className="bg-primary h-1.5 rounded-full" style={{ width: skill.level }}></div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </AnimatedSection>
 
         {/* Projects Section */}
-        <AnimatedSection id="projects" className="section-padding relative">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:via-primary/10" />
-            <div className="absolute inset-0 backdrop-blur-[1px]" />
-          </div>
-          <div className="max-w-6xl mx-auto relative">
+        <AnimatedSection id="projects" className="section-padding">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <motion.p 
                 className="text-primary font-medium mb-2"
@@ -407,114 +424,90 @@ export default function Home() {
               >
                 Featured Projects
               </motion.h2>
-              <motion.p
-                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                Here are some of my recent projects that showcase my skills and experience
-              </motion.p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "AI-Powered Task Manager",
-                  description: "A smart task management application that uses AI to prioritize and categorize tasks. Built with Next.js, TypeScript, and OpenAI API.",
-                  image: "/project1.jpg",
-                  tags: ["Next.js", "TypeScript", "AI", "Tailwind"],
-                  links: {
-                    github: "https://github.com",
-                    live: "https://demo.com"
-                  }
-                },
-                {
-                  title: "E-Learning Platform",
-                  description: "A comprehensive learning management system with real-time collaboration features and interactive content delivery.",
-                  image: "/project2.jpg",
-                  tags: ["React", "Node.js", "MongoDB", "WebRTC"],
-                  links: {
-                    github: "https://github.com",
-                    live: "https://demo.com"
-                  }
-                }
-              ].map((project, index) => (
-                <motion.div
-                  key={project.title}
-                  className="group bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20 overflow-hidden"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2 }}
-                >
-                  <div className="p-6">
-                    <div className="flex flex-col h-full">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary/10 dark:bg-primary/20 text-primary"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-4 mt-auto">
-                        <motion.a
-                          href={project.links.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <FaGithub className="w-5 h-5" />
-                        </motion.a>
-                        <motion.a
-                          href={project.links.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <FaCode className="w-5 h-5" />
-                        </motion.a>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-
-            {/* View More Projects */}
-            <motion.div
-              className="mt-12 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-            >
-              <Link
-                href="https://github.com"
-                target="_blank"
-                className="inline-flex items-center gap-2 text-primary hover:text-blue-600 transition-colors"
+              {/* Web Development Projects */}
+              <motion.div
+                className="space-y-8"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
               >
-                <span>View More Projects on GitHub</span>
-                <FaGithub className="w-5 h-5" />
-              </Link>
-            </motion.div>
+                <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
+                  <span role="img" aria-label="web">🌐</span> Web Projects
+                </h3>
+                
+                {/* Project Card 1 */}
+                <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20">
+                  <h4 className="text-lg font-semibold mb-2">Personal Portfolio Website</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    A modern, responsive portfolio website built with Next.js 13, TypeScript, and Tailwind CSS.
+                    Features dark mode, animations, and optimised performance.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Next.js</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">TypeScript</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Tailwind CSS</span>
+                  </div>
+                </div>
+
+                {/* Project Card 2 */}
+                <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20">
+                  <h4 className="text-lg font-semibold mb-2">E-commerce Platform</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    Full-stack e-commerce solution with features like user authentication,
+                    product management, and secure payment integration.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">React</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Node.js</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">MongoDB</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Machine Learning Projects */}
+              <motion.div
+                className="space-y-8"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
+                  <span role="img" aria-label="ml">🤖</span> ML Projects
+                </h3>
+                
+                {/* Project Card 1 */}
+                <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20">
+                  <h4 className="text-lg font-semibold mb-2">Image Classification System</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    Deep learning model for image classification using TensorFlow.
+                    Achieved 95% accuracy on test dataset.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Python</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">TensorFlow</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">OpenCV</span>
+                  </div>
+                </div>
+
+                {/* Project Card 2 */}
+                <div className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20">
+                  <h4 className="text-lg font-semibold mb-2">Sentiment Analysis Tool</h4>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                    NLP-based sentiment analysis tool for social media data.
+                    Uses advanced ML techniques for accurate sentiment prediction.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Python</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">NLTK</span>
+                    <span className="px-2 py-1 bg-primary/10 text-primary rounded text-xs">Scikit-learn</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </AnimatedSection>
 
