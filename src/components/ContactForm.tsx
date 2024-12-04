@@ -43,14 +43,14 @@ export default function ContactForm() {
 
   return (
     <motion.div
-      className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
+      className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-8 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20"
       initial={{ opacity: 0, x: 20 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
     >
-      <h3 className="text-xl font-semibold mb-6">Send Me a Message</h3>
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <h3 className="text-xl font-semibold mb-8">Send Me a Message</h3>
+      <form onSubmit={handleSubmit} className="space-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
               Your Name
@@ -63,7 +63,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-800/20 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
               placeholder="John Doe"
             />
           </div>
@@ -80,7 +80,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-800/20 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all placeholder-gray-400 dark:placeholder-gray-500"
               placeholder="john@example.com"
             />
           </div>
@@ -97,8 +97,8 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleChange}
             required
-            rows={4}
-            className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
+            rows={5}
+            className="w-full px-4 py-3 rounded-xl bg-white/50 dark:bg-gray-800/50 border border-white/20 dark:border-gray-800/20 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none placeholder-gray-400 dark:placeholder-gray-500"
             placeholder="Hello, I'd like to talk about..."
           />
         </div>
@@ -106,10 +106,10 @@ export default function ContactForm() {
         <motion.button
           type="submit"
           disabled={isSubmitting}
-          className={`w-full py-3 px-6 rounded-lg bg-primary text-white font-medium shadow-sm
+          className={`w-full py-4 px-6 rounded-xl bg-primary text-white font-medium shadow-lg hover:shadow-primary/25
             ${isSubmitting ? 'opacity-70 cursor-not-allowed' : 'hover:bg-blue-600'} 
-            transition-colors duration-200`}
-          whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+            transition-all duration-300`}
+          whileHover={!isSubmitting ? { scale: 1.01 } : {}}
           whileTap={!isSubmitting ? { scale: 0.98 } : {}}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -119,7 +119,7 @@ export default function ContactForm() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 p-4 rounded-lg text-center"
+            className="bg-green-50/50 dark:bg-green-900/20 backdrop-blur-sm text-green-600 dark:text-green-400 p-4 rounded-xl text-center"
           >
             Message sent successfully! I'll get back to you soon.
           </motion.div>
@@ -129,7 +129,7 @@ export default function ContactForm() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-4 rounded-lg text-center"
+            className="bg-red-50/50 dark:bg-red-900/20 backdrop-blur-sm text-red-600 dark:text-red-400 p-4 rounded-xl text-center"
           >
             Failed to send message. Please try again.
           </motion.div>
