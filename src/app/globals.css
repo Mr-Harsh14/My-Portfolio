@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
+  }
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient bg-300% animate-gradient;
+}
+
+@layer components {
+  .hero-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient bg-300%;
+  }
+  
+  .nav-link {
+    @apply hover:text-primary transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-2 rounded-full bg-primary text-white hover:bg-blue-600 transition-colors duration-200 font-medium;
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+} 
