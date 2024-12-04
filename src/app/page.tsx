@@ -139,11 +139,15 @@ export default function Home() {
 
         {/* About Section */}
         <AnimatedSection id="about" className="section-padding relative">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:via-primary/10" />
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:via-primary/10" />
+            <div className="absolute inset-0 backdrop-blur-[1px]" />
+          </div>
           <div className="max-w-6xl mx-auto relative">
+            {/* Section Header */}
             <div className="text-center mb-12">
               <motion.p 
-                className="text-primary font-medium mb-3"
+                className="text-primary font-medium mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -151,121 +155,236 @@ export default function Home() {
                 About Me
               </motion.p>
               <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-4"
+                className="text-3xl md:text-4xl font-bold mb-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                My Journey
+                My Journey So Far
               </motion.h2>
+              <motion.p
+                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                Passionate about technology and driven by curiosity, I'm on a journey to create meaningful solutions through code.
+              </motion.p>
             </div>
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            <div className="grid lg:grid-cols-3 gap-8 items-stretch">
+              {/* Main Content */}
               <motion.div
-                className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
+                className="lg:col-span-2 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-gray-600 dark:text-gray-400 mb-4">
-                  I am currently pursuing my degree in Computer Science, where I'm developing
-                  a strong foundation in software development, algorithms, and problem-solving.
-                </p>
-                <p className="text-gray-600 dark:text-gray-400">
-                  My passion lies in creating innovative solutions that make a positive impact.
-                  I enjoy working with modern technologies and am always eager to learn new skills.
-                </p>
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">Background</h3>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        I am currently pursuing my degree in Computer Science, where I'm developing
+                        a strong foundation in software development, algorithms, and problem-solving.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">What I Do</h3>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        I specialize in full-stack development, with a focus on creating modern web applications
+                        using cutting-edge technologies. I enjoy working on challenging projects that push
+                        my boundaries and help me grow as a developer.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">My Goals</h3>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        I'm constantly learning and exploring new technologies to stay at the forefront
+                        of web development, aiming to contribute to meaningful projects.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </motion.div>
+
+              {/* Quick Facts */}
               <motion.div
-                className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 space-y-4"
-                variants={fadeInUp}
-                initial="initial"
-                whileInView="animate"
+                className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                <h3 className="text-xl font-semibold mb-4">Quick Facts</h3>
-                <ul className="space-y-4">
+                <h3 className="text-xl font-semibold mb-6">Quick Facts</h3>
+                <div className="space-y-4">
                   {[
-                    { emoji: '🎓', text: 'Studying Computer Science' },
-                    { emoji: '💻', text: 'Full-stack Developer' },
-                    { emoji: '🌱', text: 'Always learning new technologies' },
-                    { emoji: '🤝', text: 'Open to collaboration' }
+                    { 
+                      emoji: '🎓', 
+                      text: 'Computer Science Student', 
+                      desc: 'Pursuing degree in software engineering' 
+                    },
+                    { 
+                      emoji: '💻', 
+                      text: 'Full-stack Developer', 
+                      desc: 'Modern web technologies & best practices' 
+                    },
+                    { 
+                      emoji: '🌱', 
+                      text: 'Continuous Learner', 
+                      desc: 'Always exploring new technologies' 
+                    },
+                    { 
+                      emoji: '🤝', 
+                      text: 'Team Player', 
+                      desc: 'Strong collaboration skills' 
+                    }
                   ].map((fact, index) => (
-                    <motion.li
+                    <motion.div
                       key={index}
-                      className="flex items-center space-x-3 text-gray-600 dark:text-gray-400"
+                      className="flex items-start space-x-3"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <span className="text-2xl">{fact.emoji}</span>
-                      <span>{fact.text}</span>
-                    </motion.li>
+                      <div className="bg-primary/10 dark:bg-primary/20 p-2 rounded-lg">
+                        <span className="text-xl">{fact.emoji}</span>
+                      </div>
+                      <div>
+                        <h4 className="font-medium text-gray-900 dark:text-white text-sm">{fact.text}</h4>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">{fact.desc}</p>
+                      </div>
+                    </motion.div>
                   ))}
-                </ul>
+                </div>
               </motion.div>
             </div>
           </div>
         </AnimatedSection>
 
         {/* Skills Section */}
-        <AnimatedSection id="skills" className="section-padding relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent dark:via-gray-800/50" />
+        <AnimatedSection id="skills" className="section-padding relative">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/50 to-transparent dark:via-gray-800/50" />
+            <div className="absolute inset-0 backdrop-blur-[1px]" />
+          </div>
           <div className="max-w-6xl mx-auto relative">
             <div className="text-center mb-12">
               <motion.p 
-                className="text-primary font-medium mb-3"
+                className="text-primary font-medium mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                What I Do
+                What I Work With
               </motion.p>
               <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-4"
+                className="text-3xl md:text-4xl font-bold mb-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 Skills & Technologies
               </motion.h2>
+              <motion.p
+                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                I work with a variety of technologies across the full stack development spectrum
+              </motion.p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
                   title: "Frontend Development",
-                  skills: "React, Next.js, TypeScript, Tailwind CSS",
-                  delay: 0
+                  skills: [
+                    { name: "React & Next.js", level: 90 },
+                    { name: "TypeScript", level: 85 },
+                    { name: "Tailwind CSS", level: 90 },
+                    { name: "HTML/CSS", level: 95 },
+                  ],
+                  bgClass: "bg-blue-500/10 dark:bg-blue-500/20"
                 },
                 {
                   title: "Backend Development",
-                  skills: "Node.js, Python, Java, SQL",
-                  delay: 0.2
+                  skills: [
+                    { name: "Node.js", level: 85 },
+                    { name: "Python", level: 80 },
+                    { name: "SQL", level: 85 },
+                    { name: "RESTful APIs", level: 90 },
+                  ],
+                  bgClass: "bg-green-500/10 dark:bg-green-500/20"
                 },
                 {
                   title: "Tools & Technologies",
-                  skills: "Git, Docker, AWS, Linux",
-                  delay: 0.4
+                  skills: [
+                    { name: "Git & GitHub", level: 90 },
+                    { name: "Docker", level: 75 },
+                    { name: "AWS", level: 70 },
+                    { name: "Linux", level: 80 },
+                  ],
+                  bgClass: "bg-purple-500/10 dark:bg-purple-500/20"
                 }
               ].map((category, index) => (
                 <motion.div
                   key={category.title}
-                  className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
+                  className={`backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20 ${category.bgClass}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: category.delay }}
-                  whileHover={{ y: -5 }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {category.skills}
-                  </p>
+                  <h3 className="text-lg font-semibold mb-6">{category.title}</h3>
+                  <div className="space-y-4">
+                    {category.skills.map((skill, skillIndex) => (
+                      <motion.div
+                        key={skill.name}
+                        className="space-y-2"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: (index * 0.1) + (skillIndex * 0.1) }}
+                      >
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm font-medium">{skill.name}</span>
+                          <span className="text-xs text-gray-600 dark:text-gray-400">{skill.level}%</span>
+                        </div>
+                        <div className="h-1.5 bg-white/20 dark:bg-gray-700 rounded-full overflow-hidden">
+                          <motion.div
+                            className="h-full bg-primary dark:bg-primary/80 rounded-full"
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                          />
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Additional Skills */}
+            <motion.div
+              className="mt-8 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Additional skills include: Jest, GraphQL, MongoDB, Redis, CI/CD, and more.
+              </p>
+            </motion.div>
           </div>
         </AnimatedSection>
 
