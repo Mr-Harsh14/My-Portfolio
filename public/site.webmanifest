@@ -1,0 +1,20 @@
+{
+  "name": "Harsh Maniya Portfolio",
+  "short_name": "HM Portfolio",
+  "icons": [
+    {
+      "src": "/images/hazz.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/hazz.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0070f3",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+} 
