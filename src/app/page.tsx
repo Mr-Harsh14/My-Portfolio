@@ -40,7 +40,7 @@ export default function Home() {
                 className="relative inline-block"
               >
                 <span className="bg-primary/10 dark:bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
-                  Open to Opportunities
+                  Final Year Student at Westminster
                 </span>
               </motion.div>
 
@@ -53,7 +53,7 @@ export default function Home() {
                 <span className="hero-gradient inline-block mb-4">Hi, I'm Harsh Maniya</span>
                 <br />
                 <span className="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-300 mt-4 block">
-                  Computer Science Student & Developer
+                  Web Developer & ML Enthusiast
                 </span>
               </motion.h1>
 
@@ -63,8 +63,9 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                A passionate Computer Science student based in the UK, focused on building
-                innovative web applications and exploring cutting-edge technologies.
+                A final year Computer Science student at the University of Westminster,
+                specialising in Web Development and Machine Learning. Passionate about
+                creating innovative solutions using cutting-edge technologies.
               </motion.p>
 
               <motion.div 
@@ -160,17 +161,8 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                My Journey So Far
+                My Journey
               </motion.h2>
-              <motion.p
-                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                Passionate about technology and driven by curiosity, I'm on a journey to create meaningful solutions through code.
-              </motion.p>
             </div>
 
             <div className="grid lg:grid-cols-3 gap-8 items-stretch">
@@ -186,25 +178,28 @@ export default function Home() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">Background</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        I am currently pursuing my degree in Computer Science, where I'm developing
-                        a strong foundation in software development, algorithms, and problem-solving.
+                        Currently in my final year at the University of Westminster, where I'm
+                        developing expertise in both Web Development and Machine Learning. My
+                        academic journey has equipped me with a strong foundation in software
+                        development and problem-solving.
                       </p>
                     </div>
                     
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">What I Do</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        I specialize in full-stack development, with a focus on creating modern web applications
-                        using cutting-edge technologies. I enjoy working on challenging projects that push
-                        my boundaries and help me grow as a developer.
+                        I specialise in creating modern web applications and exploring machine
+                        learning solutions. My dual focus allows me to build innovative
+                        applications that leverage both web technologies and AI capabilities.
                       </p>
                     </div>
 
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">My Goals</h3>
                       <p className="text-gray-600 dark:text-gray-400">
-                        I'm constantly learning and exploring new technologies to stay at the forefront
-                        of web development, aiming to contribute to meaningful projects.
+                        As I approach graduation, I'm keen to apply my expertise in Web Development
+                        and Machine Learning to create impactful solutions. I'm particularly
+                        interested in projects that combine both disciplines.
                       </p>
                     </div>
                   </div>
@@ -224,23 +219,23 @@ export default function Home() {
                   {[
                     { 
                       emoji: '🎓', 
-                      text: 'Computer Science Student', 
-                      desc: 'Pursuing degree in software engineering' 
+                      text: 'Final Year Student', 
+                      desc: 'University of Westminster' 
                     },
                     { 
                       emoji: '💻', 
-                      text: 'Full-stack Developer', 
-                      desc: 'Modern web technologies & best practices' 
+                      text: 'Web Developer', 
+                      desc: 'Modern web technologies' 
+                    },
+                    { 
+                      emoji: '🤖', 
+                      text: 'ML Enthusiast', 
+                      desc: 'AI & Machine Learning' 
                     },
                     { 
                       emoji: '🌱', 
                       text: 'Continuous Learner', 
-                      desc: 'Always exploring new technologies' 
-                    },
-                    { 
-                      emoji: '🤝', 
-                      text: 'Team Player', 
-                      desc: 'Strong collaboration skills' 
+                      desc: 'Always exploring new tech' 
                     }
                   ].map((fact, index) => (
                     <motion.div

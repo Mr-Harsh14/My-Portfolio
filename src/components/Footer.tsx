@@ -9,9 +9,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: FaGithub, href: 'https://github.com/harshmaniya', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://linkedin.com/in/harsh-maniya', label: 'LinkedIn' },
     { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' }
   ]
 
@@ -35,9 +34,11 @@ export default function Footer() {
               Portfolio
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Computer Science Student
+              Final Year Computer Science Student
               <br />
-              Building the future, one line of code at a time.
+              University of Westminster
+              <br />
+              Specialising in Web Development and Machine Learning
             </p>
           </div>
 

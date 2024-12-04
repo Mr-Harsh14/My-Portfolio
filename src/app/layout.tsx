@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Harsh Maniya | Portfolio',
-  description: 'Personal portfolio showcasing my projects, skills, and experiences as a Computer Science student in the UK.',
+  title: 'Harsh Maniya | Computer Science Portfolio',
+  description: 'Final year Computer Science student at the University of Westminster, specialising in Web Development and Machine Learning. View my projects and experience.',
   icons: {
     icon: [
       {
