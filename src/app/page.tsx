@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { FaGithub, FaLinkedin, FaCode } from 'react-icons/fa'
+import ContactForm from '@/components/ContactForm'
+import { FaGithub, FaLinkedin, FaCode, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
 import AnimatedSection from '@/components/AnimatedSection'
 import { motion } from 'framer-motion'
 
@@ -181,42 +182,98 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Contact Section */}
-        <AnimatedSection id="contact" className="section-padding">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-              Get In Touch
-            </h2>
-            <motion.div 
-              className="text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
-                I'm always open to new opportunities and collaborations.
-                Feel free to reach out!
-              </p>
-              <div className="flex justify-center gap-6">
-                <motion.a
-                  href="https://github.com"
-                  target="_blank"
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaGithub className="w-8 h-8" />
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FaLinkedin className="w-8 h-8" />
-                </motion.a>
+        <AnimatedSection id="contact" className="section-padding relative">
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent" />
+          <div className="max-w-6xl mx-auto relative">
+            <div className="text-center mb-12">
+              <motion.p 
+                className="text-primary font-medium mb-3"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                Contact Me
+              </motion.p>
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                Get In Touch
+              </motion.h2>
+              <motion.p 
+                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                I'm always interested in hearing about new projects and opportunities.
+                Whether you have a question or just want to say hi, feel free to reach out!
+              </motion.p>
+            </div>
+
+            <div className="grid md:grid-cols-5 gap-12 items-start">
+              {/* Contact Info */}
+              <motion.div 
+                className="md:col-span-2 bg-white/70 dark:bg-gray-900/70 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-xl font-semibold mb-6">Let's Connect</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <FaMapMarkerAlt className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-1">Location</h4>
+                      <p className="text-gray-600 dark:text-gray-400">United Kingdom</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-primary/10 p-3 rounded-lg">
+                      <FaEnvelope className="w-6 h-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium mb-1">Email</h4>
+                      <p className="text-gray-600 dark:text-gray-400">your.email@example.com</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h4 className="font-medium mb-4">Follow Me</h4>
+                  <div className="flex space-x-4">
+                    <motion.a
+                      href="https://github.com"
+                      target="_blank"
+                      className="bg-white dark:bg-gray-800 p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors shadow-sm"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FaGithub className="w-6 h-6" />
+                    </motion.a>
+                    <motion.a
+                      href="https://linkedin.com"
+                      target="_blank"
+                      className="bg-white dark:bg-gray-800 p-3 rounded-lg text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors shadow-sm"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FaLinkedin className="w-6 h-6" />
+                    </motion.a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Contact Form */}
+              <div className="md:col-span-3">
+                <ContactForm />
               </div>
-            </motion.div>
+            </div>
           </div>
         </AnimatedSection>
       </main>
