@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Portfolio | Computer Science Student',
+  title: 'Harsh Maniya | Portfolio',
   description: 'Personal portfolio showcasing my projects, skills, and experiences as a Computer Science student in the UK.',
 }
 
