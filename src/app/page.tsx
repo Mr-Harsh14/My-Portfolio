@@ -31,7 +31,7 @@ export default function Home() {
             <div className="absolute -bottom-20 left-1/2 w-72 h-72 bg-pink-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
           </div>
 
-          <div className="relative px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-32 pb-28">
+          <div className="relative px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-32 pb-16">
             <div className="text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function Home() {
                 className="relative inline-block"
               >
                 <span className="bg-primary/10 dark:bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
-                  Available for Opportunities
+                  Open to Opportunities
                 </span>
               </motion.div>
 
@@ -50,10 +50,10 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <span className="hero-gradient inline-block mb-4">Computer Science Student</span>
+                <span className="hero-gradient inline-block mb-4">Hi, I'm Harsh Maniya</span>
                 <br />
                 <span className="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-300 mt-4 block">
-                  Turning Ideas into Reality
+                  Computer Science Student & Developer
                 </span>
               </motion.h1>
 
@@ -63,8 +63,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                I'm a passionate Computer Science student from the UK, focused on creating
-                innovative solutions and learning cutting-edge technologies.
+                A passionate Computer Science student based in the UK, focused on building
+                innovative web applications and exploring cutting-edge technologies.
               </motion.p>
 
               <motion.div 
@@ -77,13 +77,13 @@ export default function Home() {
                   href="#projects" 
                   className="btn-primary shadow-lg hover:shadow-primary/25 transition-all px-8 py-3 text-base"
                 >
-                  View Projects
+                  View My Work
                 </Link>
                 <Link 
                   href="#contact" 
                   className="px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 font-medium shadow-lg hover:shadow-primary/25 text-base"
                 >
-                  Contact Me
+                  Get in Touch
                 </Link>
               </motion.div>
 
@@ -95,7 +95,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.8 }}
               >
                 <motion.a
-                  href="https://github.com"
+                  href="https://github.com/harshmaniya"
                   target="_blank"
                   className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
@@ -104,7 +104,7 @@ export default function Home() {
                   <FaGithub className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/harsh-maniya"
                   target="_blank"
                   className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
@@ -116,7 +116,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Scroll Down Indicator - Now positioned outside the main content div */}
+          {/* Scroll Down Indicator */}
           <div className="absolute bottom-12 left-0 right-0 flex justify-center pointer-events-none">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
