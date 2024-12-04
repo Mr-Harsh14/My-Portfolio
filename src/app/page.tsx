@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ContactForm from '@/components/ContactForm'
-import { FaGithub, FaLinkedin, FaCode, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaCode, FaMapMarkerAlt, FaEnvelope, FaArrowDown } from 'react-icons/fa'
 import AnimatedSection from '@/components/AnimatedSection'
 import { motion } from 'framer-motion'
 
@@ -19,46 +19,117 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow bg-white dark:bg-gray-900">
         {/* Hero Section */}
-        <AnimatedSection className="section-padding flex flex-col items-center justify-center min-h-screen text-center pt-16 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent dark:from-primary/10" />
-          <div className="max-w-4xl mx-auto relative">
-            <motion.h1 
-              className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <span className="hero-gradient inline-block">Computer Science Student</span>
-              <br />
-              <span className="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-300 mt-4 block">
-                Turning Ideas into Reality
-              </span>
-            </motion.h1>
-            <motion.p 
-              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              I'm a passionate Computer Science student from the UK, focused on creating
-              innovative solutions and learning cutting-edge technologies.
-            </motion.p>
-            <motion.div 
-              className="flex gap-4 justify-center"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <Link href="#projects" className="btn-primary shadow-lg hover:shadow-primary/25 transition-all">
-                View Projects
-              </Link>
-              <Link 
-                href="#contact" 
-                className="px-6 py-2 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 font-medium shadow-lg hover:shadow-primary/25"
+        <AnimatedSection className="min-h-screen relative flex flex-col items-center justify-center overflow-hidden">
+          {/* Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent dark:from-primary/10" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent dark:from-primary/10" />
+            
+            {/* Animated background shapes */}
+            <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+            <div className="absolute top-40 right-10 w-72 h-72 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+            <div className="absolute -bottom-20 left-1/2 w-72 h-72 bg-pink-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+          </div>
+
+          <div className="relative px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-32 pb-16">
+            <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative inline-block"
               >
-                Contact Me
-              </Link>
-            </motion.div>
+                <span className="bg-primary/10 dark:bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">
+                  Available for Opportunities
+                </span>
+              </motion.div>
+
+              <motion.h1 
+                className="mt-8 text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <span className="hero-gradient inline-block mb-4">Computer Science Student</span>
+                <br />
+                <span className="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-300 mt-4 block">
+                  Turning Ideas into Reality
+                </span>
+              </motion.h1>
+
+              <motion.p 
+                className="mt-6 text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                I'm a passionate Computer Science student from the UK, focused on creating
+                innovative solutions and learning cutting-edge technologies.
+              </motion.p>
+
+              <motion.div 
+                className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+              >
+                <Link 
+                  href="#projects" 
+                  className="btn-primary shadow-lg hover:shadow-primary/25 transition-all px-8 py-3 text-base"
+                >
+                  View Projects
+                </Link>
+                <Link 
+                  href="#contact" 
+                  className="px-8 py-3 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-200 font-medium shadow-lg hover:shadow-primary/25 text-base"
+                >
+                  Contact Me
+                </Link>
+              </motion.div>
+
+              {/* Social Links */}
+              <motion.div 
+                className="mt-10 flex justify-center gap-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <motion.a
+                  href="https://github.com"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaGithub className="w-6 h-6" />
+                </motion.a>
+                <motion.a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  className="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FaLinkedin className="w-6 h-6" />
+                </motion.a>
+              </motion.div>
+
+              {/* Scroll Down Indicator */}
+              <motion.div
+                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ 
+                  duration: 0.5, 
+                  delay: 1,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  repeatDelay: 0.5
+                }}
+              >
+                <FaArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-600" />
+              </motion.div>
+            </div>
           </div>
         </AnimatedSection>
 
