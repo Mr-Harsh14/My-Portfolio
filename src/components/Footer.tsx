@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
 
@@ -58,23 +59,37 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Connect</h3>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  title={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
+          <div className="space-y-6">
+            <div>
+              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Connect</h3>
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    title={social.label}
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Logo */}
+            <div className="flex justify-start">
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/images/hazz.png"
+                  alt="Harsh Maniya Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -83,7 +98,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © {currentYear} Your Name. All rights reserved.
+              © {currentYear} Harsh Maniya. All rights reserved.
             </p>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               Built with{' '}
