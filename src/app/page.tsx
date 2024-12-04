@@ -31,7 +31,7 @@ export default function Home() {
             <div className="absolute -bottom-20 left-1/2 w-72 h-72 bg-pink-500/10 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
           </div>
 
-          <div className="relative px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-32 pb-16">
+          <div className="relative px-4 sm:px-6 lg:px-8 w-full max-w-7xl mx-auto pt-32 pb-28">
             <div className="text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -113,23 +113,27 @@ export default function Home() {
                   <FaLinkedin className="w-6 h-6" />
                 </motion.a>
               </motion.div>
-
-              {/* Scroll Down Indicator */}
-              <motion.div
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: 1,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                  repeatDelay: 0.5
-                }}
-              >
-                <FaArrowDown className="w-6 h-6 text-gray-400 dark:text-gray-600" />
-              </motion.div>
             </div>
+          </div>
+
+          {/* Scroll Down Indicator - Now positioned outside the main content div */}
+          <div className="absolute bottom-12 left-0 right-0 flex justify-center pointer-events-none">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ 
+                opacity: [0.4, 1, 0.4],
+                y: [0, 8, 0]
+              }}
+              transition={{ 
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="flex flex-col items-center"
+            >
+              <span className="text-sm text-gray-500 dark:text-gray-400 mb-2">Scroll</span>
+              <FaArrowDown className="w-5 h-5 text-gray-500 dark:text-gray-400" />
+            </motion.div>
           </div>
         </AnimatedSection>
 
