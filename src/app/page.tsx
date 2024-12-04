@@ -391,13 +391,13 @@ export default function Home() {
         {/* Projects Section */}
         <AnimatedSection id="projects" className="section-padding relative">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-white dark:to-gray-900" />
-            <div className="absolute inset-0 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent dark:via-primary/10" />
+            <div className="absolute inset-0 backdrop-blur-[1px]" />
           </div>
           <div className="max-w-6xl mx-auto relative">
             <div className="text-center mb-12">
               <motion.p 
-                className="text-primary font-medium mb-3"
+                className="text-primary font-medium mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -405,43 +405,121 @@ export default function Home() {
                 My Work
               </motion.p>
               <motion.h2 
-                className="text-3xl md:text-4xl font-bold mb-4"
+                className="text-3xl md:text-4xl font-bold mb-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
                 Featured Projects
               </motion.h2>
+              <motion.p
+                className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                Here are some of my recent projects that showcase my skills and experience
+              </motion.p>
             </div>
+
             <div className="grid md:grid-cols-2 gap-8">
-              {[1, 2].map((_, index) => (
+              {[
+                {
+                  title: "AI-Powered Task Manager",
+                  description: "A smart task management application that uses AI to prioritize and categorize tasks. Built with Next.js, TypeScript, and OpenAI API.",
+                  image: "/project1.jpg",
+                  tags: ["Next.js", "TypeScript", "AI", "Tailwind"],
+                  links: {
+                    github: "https://github.com",
+                    live: "https://demo.com"
+                  }
+                },
+                {
+                  title: "E-Learning Platform",
+                  description: "A comprehensive learning management system with real-time collaboration features and interactive content delivery.",
+                  image: "/project2.jpg",
+                  tags: ["React", "Node.js", "MongoDB", "WebRTC"],
+                  links: {
+                    github: "https://github.com",
+                    live: "https://demo.com"
+                  }
+                }
+              ].map((project, index) => (
                 <motion.div
-                  key={index}
-                  className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20 overflow-hidden group hover:shadow-xl transition-all duration-300"
+                  key={project.title}
+                  className="group bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 dark:border-gray-800/20 overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.2 }}
-                  whileHover={{ y: -5, scale: 1.01 }}
                 >
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">Project Name</h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                      Description of your amazing project goes here. Explain what problem
-                      it solves and what technologies you used.
-                    </p>
-                    <div className="flex gap-4">
-                      <Link href="#" className="text-primary hover:text-blue-600 transition-colors">
-                        <FaGithub className="w-6 h-6" />
-                      </Link>
-                      <Link href="#" className="text-primary hover:text-blue-600 transition-colors">
-                        <FaCode className="w-6 h-6" />
-                      </Link>
+                    <div className="flex flex-col h-full">
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-primary/10 dark:bg-primary/20 text-primary"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center gap-4 mt-auto">
+                        <motion.a
+                          href={project.links.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <FaGithub className="w-5 h-5" />
+                        </motion.a>
+                        <motion.a
+                          href={project.links.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <FaCode className="w-5 h-5" />
+                        </motion.a>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* View More Projects */}
+            <motion.div
+              className="mt-12 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <Link
+                href="https://github.com"
+                target="_blank"
+                className="inline-flex items-center gap-2 text-primary hover:text-blue-600 transition-colors"
+              >
+                <span>View More Projects on GitHub</span>
+                <FaGithub className="w-5 h-5" />
+              </Link>
+            </motion.div>
           </div>
         </AnimatedSection>
 

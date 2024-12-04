@@ -1,47 +1,39 @@
 'use client'
 
 import Link from 'next/link'
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { motion } from 'framer-motion'
-
-const socialLinks = [
-  {
-    name: 'GitHub',
-    href: 'https://github.com',
-    icon: FaGithub,
-  },
-  {
-    name: 'LinkedIn',
-    href: 'https://linkedin.com',
-    icon: FaLinkedin,
-  },
-  {
-    name: 'Twitter',
-    href: 'https://twitter.com',
-    icon: FaTwitter,
-  },
-]
-
-const quickLinks = [
-  { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#contact' },
-]
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
+  const socialLinks = [
+    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' }
+  ]
+
+  const footerLinks = [
+    { href: '#about', label: 'About' },
+    { href: '#skills', label: 'Skills' },
+    { href: '#projects', label: 'Projects' },
+    { href: '#contact', label: 'Contact' }
+  ]
+
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand */}
-          <div className="flex flex-col space-y-4">
+    <footer className="relative mt-20">
+      {/* Gradient Divider */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
+
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          {/* Brand Section */}
+          <div className="space-y-4">
             <Link href="/" className="text-2xl font-bold text-primary">
               Portfolio
             </Link>
-            <p className="text-gray-600 dark:text-gray-400">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
               Computer Science Student
               <br />
               Building the future, one line of code at a time.
@@ -49,16 +41,16 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col space-y-4">
-            <h3 className="text-lg font-semibold">Quick Links</h3>
+          <div>
+            <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Quick Links</h3>
             <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.name}>
+              {footerLinks.map((link) => (
+                <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
+                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm transition-colors"
                   >
-                    {link.name}
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -66,31 +58,52 @@ export default function Footer() {
           </div>
 
           {/* Social Links */}
-          <div className="flex flex-col space-y-4">
-            <h3 className="text-lg font-semibold">Connect</h3>
+          <div>
+            <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Connect</h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
-                  key={social.name}
+                  key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
+                  title={social.label}
                 >
-                  <social.icon className="w-6 h-6" />
+                  <social.icon className="w-5 h-5" />
                 </motion.a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-800">
-          <p className="text-center text-gray-600 dark:text-gray-400">
-            © {currentYear} Portfolio. All rights reserved.
-          </p>
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              © {currentYear} Your Name. All rights reserved.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              Built with{' '}
+              <Link
+                href="https://nextjs.org"
+                target="_blank"
+                className="text-primary hover:text-blue-600 transition-colors"
+              >
+                Next.js
+              </Link>
+              {' '}and{' '}
+              <Link
+                href="https://tailwindcss.com"
+                target="_blank"
+                className="text-primary hover:text-blue-600 transition-colors"
+              >
+                Tailwind CSS
+              </Link>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
