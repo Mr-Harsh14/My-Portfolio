@@ -24,6 +24,7 @@ export default function Navbar() {
               src="/images/hazz.png"
               alt="Harsh Maniya Logo"
               fill
+              sizes="(max-width: 768px) 2rem, 2rem"
               className="object-contain"
               priority
             />

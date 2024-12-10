@@ -32,6 +32,21 @@ export const metadata: Metadata = {
   manifest: '/site.webmanifest',
 }
 
+// Suppress specific hydration warnings
+const suppressHydrationWarnings = `
+  (function() {
+    const originalError = console.error;
+    console.error = (...args) => {
+      if (args[0].includes('Warning: Extra attributes from the server') && 
+          (args[0].includes('data-new-gr-c-s-check-loaded') || 
+           args[0].includes('data-gr-ext-installed'))) {
+        return;
+      }
+      originalError.apply(console, args);
+    };
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -42,8 +57,12 @@ export default function RootLayout({
       <head>
         <link rel="icon" type="image/png" href="/images/hazz.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/hazz.png" />
+        <script dangerouslySetInnerHTML={{ __html: suppressHydrationWarnings }} />
       </head>
-      <body className={`${inter.variable} font-sans bg-white dark:bg-gray-900`}>
+      <body 
+        className={`${inter.variable} font-sans bg-white dark:bg-gray-900`}
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           {children}
         </ThemeProvider>

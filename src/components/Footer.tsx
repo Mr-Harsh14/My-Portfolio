@@ -88,6 +88,7 @@ export default function Footer() {
                   src="/images/hazz.png"
                   alt="Harsh Maniya Logo"
                   fill
+                  sizes="(max-width: 768px) 4rem, 4rem"
                   className="object-contain"
                 />
               </div>

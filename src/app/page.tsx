@@ -505,11 +505,8 @@ export default function Home() {
         </AnimatedSection>
 
         {/* Contact Section */}
-        <AnimatedSection id="contact" className="section-padding relative">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-50/5 to-transparent dark:via-gray-800/50" />
-          </div>
-          <div className="max-w-6xl mx-auto relative">
+        <section id="contact" className="section-padding">
+          <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <motion.p 
                 className="text-primary font-medium mb-2"
@@ -537,47 +534,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-white mb-1">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-white mb-1">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="your.email@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
-                      rows={4}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder="Your message..."
-                    ></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                <ContactForm />
               </motion.div>
 
               {/* Contact Information */}
@@ -601,7 +558,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-gray-900 dark:text-white">Email</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">your.email@example.com</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">harshmaniya03@gmail.com</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -627,7 +584,7 @@ export default function Home() {
               </motion.div>
             </div>
           </div>
-        </AnimatedSection>
+        </section>
       </main>
       <Footer />
     </div>
