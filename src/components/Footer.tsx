@@ -9,9 +9,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/harshmaniya', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/in/harsh-maniya', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' }
+    { icon: FaGithub, href: 'https://github.com/Mr-Harsh14', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/harsh-maniya-549957203/', label: 'LinkedIn' },
+    { icon: FaEnvelope, href: 'mailto:harshmaniya03@gmail.com', label: 'Email' }
   ]
 
   const footerLinks = [
