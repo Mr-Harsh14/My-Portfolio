@@ -567,7 +567,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-gray-900 dark:text-white">LinkedIn</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">linkedin.com/in/harsh-maniya</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">linkedin.com/in/harsh-maniya-549957203</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -576,7 +576,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-gray-900 dark:text-white">GitHub</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">github.com/harshmaniya</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">github.com/Mr-Harsh14</p>
                       </div>
                     </div>
                   </div>
