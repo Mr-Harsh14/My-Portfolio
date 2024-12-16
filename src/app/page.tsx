@@ -558,7 +558,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="text-sm font-medium text-gray-900 dark:text-white">Email</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-300">harshmaniya03@gmail.com</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300">hmaniya00@gmail.com</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">

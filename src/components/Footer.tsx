@@ -11,7 +11,7 @@ export default function Footer() {
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/Mr-Harsh14', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://www.linkedin.com/in/harsh-maniya-549957203/', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:harshmaniya03@gmail.com', label: 'Email' }
+    { icon: FaEnvelope, href: 'mailto:hmaniya00@gmail.com', label: 'Email' }
   ]
 
   const footerLinks = [
