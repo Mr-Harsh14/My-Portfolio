@@ -1,33 +1,26 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' }
+  ],
+}
+
 export const metadata: Metadata = {
   title: 'Harsh Maniya | Computer Science Portfolio',
   description: 'Final year Computer Science student at the University of Westminster, specialising in Web Development and Machine Learning. View my projects and experience.',
   icons: {
-    icon: [
-      {
-        url: '/images/hazz.png',
-        href: '/images/hazz.png',
-      }
-    ],
-    apple: [
-      {
-        url: '/images/hazz.png',
-        sizes: '180x180',
-        type: 'image/png',
-      }
-    ],
-    shortcut: [
-      {
-        url: '/images/hazz.png',
-        type: 'image/png',
-      }
-    ],
+    icon: [{ url: '/images/hazz.png' }],
+    apple: [{ url: '/images/hazz.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: [{ url: '/images/hazz.png', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
 }
@@ -55,8 +48,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" type="image/png" href="/images/hazz.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/hazz.png" />
         <script dangerouslySetInnerHTML={{ __html: suppressHydrationWarnings }} />
       </head>
       <body 
