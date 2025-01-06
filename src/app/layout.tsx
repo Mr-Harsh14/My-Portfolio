@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import CustomCursor from '@/components/CustomCursor'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
@@ -55,6 +56,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
+          <CustomCursor />
           {children}
         </ThemeProvider>
       </body>
