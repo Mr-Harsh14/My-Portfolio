@@ -7,6 +7,8 @@ import ContactForm from '@/components/ContactForm'
 import { FaGithub, FaLinkedin, FaCode, FaMapMarkerAlt, FaEnvelope, FaArrowDown } from 'react-icons/fa'
 import AnimatedSection from '@/components/AnimatedSection'
 import { motion } from 'framer-motion'
+import ProjectCard from '@/components/ProjectCard'
+import { projects } from '@/data/projects'
 
 const fadeInUp = {
   initial: { y: 20, opacity: 0 },
@@ -433,32 +435,14 @@ export default function Home() {
                   <span role="img" aria-label="web">🌐</span> Web Projects
                 </h3>
                 
-                {/* Project Cards with enhanced contrast */}
-                <div className="bg-white/90 dark:bg-gray-800/95 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Personal Portfolio Website</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    A modern, responsive portfolio website built with Next.js 13, TypeScript, and Tailwind CSS.
-                    Features dark mode, animations, and optimised performance.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">Next.js</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">TypeScript</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">Tailwind CSS</span>
-                  </div>
-                </div>
-
-                <div className="bg-white/90 dark:bg-gray-800/95 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">E-commerce Platform</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    Full-stack e-commerce solution with features like user authentication,
-                    product management, and secure payment integration.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">React</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">Node.js</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">MongoDB</span>
-                  </div>
-                </div>
+                {projects
+                  .filter(project => project.category === 'web')
+                  .map(project => (
+                    <ProjectCard
+                      key={project.slug}
+                      {...project}
+                    />
+                  ))}
               </motion.div>
 
               {/* Machine Learning Projects */}
@@ -473,32 +457,14 @@ export default function Home() {
                   <span role="img" aria-label="ml">🤖</span> ML Projects
                 </h3>
                 
-                {/* Project Cards with enhanced contrast */}
-                <div className="bg-white/90 dark:bg-gray-800/95 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Image Classification System</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    Deep learning model for image classification using TensorFlow.
-                    Achieved 95% accuracy on test dataset.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">Python</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">TensorFlow</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">OpenCV</span>
-                  </div>
-                </div>
-
-                <div className="bg-white/90 dark:bg-gray-800/95 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">Sentiment Analysis Tool</h4>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-                    NLP-based sentiment analysis tool for social media data.
-                    Uses advanced ML techniques for accurate sentiment prediction.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">Python</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">NLTK</span>
-                    <span className="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary rounded text-xs">Scikit-learn</span>
-                  </div>
-                </div>
+                {projects
+                  .filter(project => project.category === 'ml')
+                  .map(project => (
+                    <ProjectCard
+                      key={project.slug}
+                      {...project}
+                    />
+                  ))}
               </motion.div>
             </div>
           </div>
