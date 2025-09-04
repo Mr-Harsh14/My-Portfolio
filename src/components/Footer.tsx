@@ -34,7 +34,7 @@ export default function Footer() {
               Portfolio
             </Link>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Computer Science Graduate
+              Final Year Computer Science Student
               <br />
               University of Westminster
               <br />
