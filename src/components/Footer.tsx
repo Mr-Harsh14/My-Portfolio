@@ -38,7 +38,7 @@ export default function Footer() {
               <br />
               University of Westminster
               <br />
-              Specialising in Web Development and Machine Learning
+              Specialising in Software Development and Machine Learning
             </p>
           </div>
 

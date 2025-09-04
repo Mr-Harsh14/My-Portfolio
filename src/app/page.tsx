@@ -71,7 +71,7 @@ export default function Home() {
                 </span>
                 <br />
                 <span className="text-3xl sm:text-4xl md:text-5xl text-gray-700 dark:text-gray-50 mt-4 block">
-                  Web Developer & ML Enthusiast
+                  Software Developer & ML Enthusiast
                 </span>
               </motion.h1>
 
@@ -82,7 +82,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
                 A Computer Science graduate from the University of Westminster,
-                specialising in Web Development and Machine Learning. Passionate about
+                specialising in Software Development and Machine Learning. Passionate about
                 creating innovative solutions using cutting-edge technologies.
               </motion.p>
 
@@ -168,7 +168,7 @@ export default function Home() {
                       <h3 className="text-xl font-semibold mb-2 text-primary">Background</h3>
                       <p className="text-gray-600 dark:text-gray-300">
                         Graduated from the University of Westminster, where I developed expertise in
-                        both Web Development and Machine Learning. My academic journey has equipped me with a strong foundation in software
+                        both Software Development and Machine Learning. My academic journey has equipped me with a strong foundation in software
                         development and problem-solving.
                       </p>
                     </div>
@@ -185,7 +185,7 @@ export default function Home() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">My Goals</h3>
                       <p className="text-gray-600 dark:text-gray-300">
-                        Since graduating, I'm keen to apply my expertise in Web Development
+                        Since graduating, I'm keen to apply my expertise in Software Development
                         and Machine Learning to create impactful solutions. I'm particularly
                         interested in projects that combine both disciplines.
                       </p>
@@ -212,8 +212,8 @@ export default function Home() {
                     },
                     { 
                       emoji: '💻', 
-                      text: 'Web Developer', 
-                      desc: 'Modern web technologies' 
+                      text: 'Software Developer', 
+                      desc: 'Modern software technologies' 
                     },
                     { 
                       emoji: '🤖', 
@@ -276,7 +276,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Web Development Skills */}
+              {/* Software Development Skills */}
               <motion.div
                 className="bg-white/80 dark:bg-gray-800/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50"
                 initial={{ opacity: 0, x: -20 }}
@@ -284,7 +284,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
-                  <span role="img" aria-label="web">🌐</span> Web Development
+                  <span role="img" aria-label="software">🌐</span> Software Development
                 </h3>
                 <div className="space-y-6">
                   <div>
@@ -423,7 +423,7 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Web Development Projects */}
+              {/* Software Development Projects */}
               <motion.div
                 className="space-y-8"
                 initial={{ opacity: 0, x: -20 }}
@@ -431,7 +431,7 @@ export default function Home() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-xl font-semibold mb-6 text-primary flex items-center gap-2">
-                  <span role="img" aria-label="web">🌐</span> Web Projects
+                  <span role="img" aria-label="software">🌐</span> Software Projects
                 </h3>
                 
                 {projects
