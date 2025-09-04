@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: 'Harsh Maniya | Computer Science Portfolio',
-  description: 'Final year Computer Science student at the University of Westminster, specialising in Web Development and Machine Learning. View my projects and experience.',
+  description: 'Computer Science graduate from the University of Westminster, specialising in Web Development and Machine Learning. View my projects and experience.',
   icons: {
     icon: [{ url: '/images/hazz.png' }],
     apple: [{ url: '/images/hazz.png', sizes: '180x180', type: 'image/png' }],

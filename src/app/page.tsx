@@ -56,7 +56,7 @@ export default function Home() {
                 className="relative inline-block"
               >
                 <span className="bg-primary/10 dark:bg-primary/30 text-primary dark:text-primary-light px-4 py-1.5 rounded-full text-sm font-medium">
-                  Final Year Student at Westminster
+                  Computer Science Graduate, University of Westminster
                 </span>
               </motion.div>
 
@@ -81,7 +81,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                A final year Computer Science student at the University of Westminster,
+                A Computer Science graduate from the University of Westminster,
                 specialising in Web Development and Machine Learning. Passionate about
                 creating innovative solutions using cutting-edge technologies.
               </motion.p>
@@ -167,9 +167,8 @@ export default function Home() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">Background</h3>
                       <p className="text-gray-600 dark:text-gray-300">
-                        Currently in my final year at the University of Westminster, where I'm
-                        developing expertise in both Web Development and Machine Learning. My
-                        academic journey has equipped me with a strong foundation in software
+                        Graduated from the University of Westminster, where I developed expertise in
+                        both Web Development and Machine Learning. My academic journey has equipped me with a strong foundation in software
                         development and problem-solving.
                       </p>
                     </div>
@@ -186,7 +185,7 @@ export default function Home() {
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">My Goals</h3>
                       <p className="text-gray-600 dark:text-gray-300">
-                        As I approach graduation, I'm keen to apply my expertise in Web Development
+                        Since graduating, I'm keen to apply my expertise in Web Development
                         and Machine Learning to create impactful solutions. I'm particularly
                         interested in projects that combine both disciplines.
                       </p>
@@ -208,7 +207,7 @@ export default function Home() {
                   {[
                     { 
                       emoji: '🎓', 
-                      text: 'Final Year Student', 
+                      text: 'Computer Science Graduate', 
                       desc: 'University of Westminster' 
                     },
                     { 
