@@ -9,8 +9,6 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    e.stopPropagation()
-
     if (isSubmitting) return
     setIsSubmitting(true)
     setStatus('idle')
@@ -25,20 +23,14 @@ export default function ContactForm() {
 
       const response = await fetch('/api/send', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
 
-      if (!response.ok) {
-        throw new Error('Failed to send message')
-      }
+      if (!response.ok) throw new Error('Failed to send message')
 
       setStatus('success')
-      if (formRef.current) {
-        formRef.current.reset()
-      }
+      formRef.current?.reset()
     } catch (error) {
       console.error('Failed to send email:', error)
       setStatus('error')
@@ -48,39 +40,24 @@ export default function ContactForm() {
   }
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
+      <Field
+        id="from_name"
+        name="from_name"
+        label="Your name"
+        placeholder="Ada Lovelace"
+        disabled={isSubmitting}
+      />
+      <Field
+        id="reply_to"
+        name="reply_to"
+        type="email"
+        label="Email"
+        placeholder="ada@example.com"
+        disabled={isSubmitting}
+      />
       <div>
-        <label htmlFor="from_name" className="block text-sm font-medium text-gray-900 dark:text-white mb-1">
-          Name
-        </label>
-        <input
-          type="text"
-          id="from_name"
-          name="from_name"
-          required
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-          placeholder="Your name"
-          disabled={isSubmitting}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="reply_to" className="block text-sm font-medium text-gray-900 dark:text-white mb-1">
-          Email
-        </label>
-        <input
-          type="email"
-          id="reply_to"
-          name="reply_to"
-          required
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-          placeholder="your.email@example.com"
-          disabled={isSubmitting}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white mb-1">
+        <label htmlFor="message" className="eyebrow mb-2 block">
           Message
         </label>
         <textarea
@@ -88,39 +65,98 @@ export default function ContactForm() {
           name="message"
           required
           rows={4}
-          className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
-          placeholder="Your message..."
+          placeholder="Tell me a little about it…"
           disabled={isSubmitting}
-        ></textarea>
+          className="w-full resize-none rounded-2xl border border-[color:var(--line-strong)] bg-[color:var(--bg)] px-4 py-3 text-[15px] placeholder:text-muted focus:border-accent-deep focus:outline-none focus:ring-2 focus:ring-accent-deep/30 dark:focus:border-accent dark:focus:ring-accent/30"
+        />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary hover:bg-primary/90 text-white font-medium py-2 px-4 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[color:var(--fg)] px-6 py-3 text-sm font-medium text-[color:var(--bg)] transition-all hover:opacity-90 disabled:opacity-50"
       >
         {isSubmitting ? (
-          <span className="flex items-center justify-center">
-            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          <>
+            <Spinner /> Sending…
+          </>
+        ) : (
+          <>
+            Send message
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-0.5"
+            >
+              <path d="M5 12h14M13 5l7 7-7 7" />
             </svg>
-            Sending...
-          </span>
-        ) : 'Send Message'}
+          </>
+        )}
       </button>
 
       {status === 'success' && (
-        <p className="text-green-600 dark:text-green-400 text-sm mt-2">
-          Message sent successfully! I'll get back to you soon.
+        <p className="rounded-2xl border border-accent-deep/30 bg-accent-soft/30 px-4 py-3 text-sm text-accent-deep dark:text-accent">
+          Message sent. I'll be in touch soon — thanks for reaching out.
         </p>
       )}
 
       {status === 'error' && (
-        <p className="text-red-600 dark:text-red-400 text-sm mt-2">
-          Failed to send message. Please try again later.
+        <p className="rounded-2xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-500">
+          Something went wrong. Please try again or email me directly.
         </p>
       )}
     </form>
   )
-} 
+}
+
+function Field({
+  id,
+  name,
+  label,
+  type = 'text',
+  placeholder,
+  disabled,
+}: {
+  id: string
+  name: string
+  label: string
+  type?: string
+  placeholder?: string
+  disabled?: boolean
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="eyebrow mb-2 block">
+        {label}
+      </label>
+      <input
+        id={id}
+        name={name}
+        type={type}
+        required
+        placeholder={placeholder}
+        disabled={disabled}
+        className="w-full rounded-full border border-[color:var(--line-strong)] bg-[color:var(--bg)] px-4 py-3 text-[15px] placeholder:text-muted focus:border-accent-deep focus:outline-none focus:ring-2 focus:ring-accent-deep/30 dark:focus:border-accent dark:focus:ring-accent/30"
+      />
+    </div>
+  )
+}
+
+function Spinner() {
+  return (
+    <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+      <path
+        className="opacity-75"
+        fill="currentColor"
+        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+      />
+    </svg>
+  )
+}

@@ -1,65 +1,113 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
-import CustomCursor from '@/components/CustomCursor'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const serif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
+  display: 'swap',
+})
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: 'white' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f172a' }
+    { media: '(prefers-color-scheme: light)', color: '#f5f4ef' },
+    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
   ],
 }
 
 export const metadata: Metadata = {
-  title: 'Harsh Maniya | Computer Science Portfolio',
-  description: 'Final year Computer Science student at the University of Westminster, specialising in Software Development and Machine Learning. View my projects and experience.',
+  metadataBase: new URL('https://hazz.me'),
+  title: {
+    default: 'Hazz — Harsh Maniya · Software Developer & ML Engineer',
+    template: '%s · hazz.me',
+  },
+  description:
+    'Harsh Maniya (Hazz) is a software developer and machine learning engineer building thoughtful products at the intersection of web and AI.',
+  keywords: [
+    'Harsh Maniya',
+    'Hazz',
+    'hazz.me',
+    'Software Developer',
+    'Machine Learning Engineer',
+    'Next.js',
+    'Portfolio',
+    'University of Westminster',
+    'London',
+  ],
+  authors: [{ name: 'Harsh Maniya', url: 'https://hazz.me' }],
+  creator: 'Harsh Maniya',
+  alternates: {
+    canonical: 'https://hazz.me',
+  },
+  openGraph: {
+    title: 'Hazz — Harsh Maniya · Software Developer & ML Engineer',
+    description: 'Building thoughtful products at the intersection of web and AI.',
+    url: 'https://hazz.me',
+    siteName: 'hazz.me',
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hazz — Harsh Maniya · Software Developer & ML Engineer',
+    description: 'Building thoughtful products at the intersection of web and AI.',
+  },
   icons: {
-    icon: [{ url: '/images/hazz.png' }],
-    apple: [{ url: '/images/hazz.png', sizes: '180x180', type: 'image/png' }],
-    shortcut: [{ url: '/images/hazz.png', type: 'image/png' }],
+    icon: [{ url: '/images/Hazz.png' }],
+    apple: [{ url: '/images/Hazz.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: [{ url: '/images/Hazz.png', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
 }
-
-// Suppress specific hydration warnings
-const suppressHydrationWarnings = `
-  (function() {
-    const originalError = console.error;
-    console.error = (...args) => {
-      if (args[0].includes('Warning: Extra attributes from the server') && 
-          (args[0].includes('data-new-gr-c-s-check-loaded') || 
-           args[0].includes('data-gr-ext-installed'))) {
-        return;
-      }
-      originalError.apply(console, args);
-    };
-  })();
-`;
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const themeScript = `
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'dark');
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+      } catch (e) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  `
+
   return (
-    <html lang="en" className="scroll-smooth">
+    <html
+      lang="en"
+      className={`${inter.variable} ${serif.variable} ${mono.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: suppressHydrationWarnings }} />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body 
-        className={`${inter.variable} font-sans bg-white dark:bg-gray-900`}
-        suppressHydrationWarning
-      >
-        <ThemeProvider>
-          <CustomCursor />
-          {children}
-        </ThemeProvider>
+      <body className="font-sans grain antialiased" suppressHydrationWarning>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
-} 
+}

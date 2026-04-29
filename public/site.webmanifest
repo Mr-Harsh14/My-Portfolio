@@ -1,20 +1,21 @@
 {
-  "name": "Harsh Maniya Portfolio",
-  "short_name": "HM Portfolio",
+  "name": "Hazz — Harsh Maniya",
+  "short_name": "Hazz",
+  "description": "Software developer & ML engineer building thoughtful products at the intersection of web and AI.",
   "icons": [
     {
-      "src": "/images/hazz.png",
+      "src": "/images/Hazz.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/images/hazz.png",
+      "src": "/images/Hazz.png",
       "sizes": "512x512",
       "type": "image/png"
     }
   ],
-  "theme_color": "#0070f3",
-  "background_color": "#ffffff",
+  "theme_color": "#0a0a0a",
+  "background_color": "#0a0a0a",
   "display": "standalone",
   "start_url": "/"
-} 
+}

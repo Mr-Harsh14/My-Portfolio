@@ -1,128 +1,113 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
+
+const links = {
+  Sections: [
+    { href: '#work', label: 'Work' },
+    { href: '#about', label: 'About' },
+    { href: '#stack', label: 'Stack' },
+    { href: '#contact', label: 'Contact' },
+  ],
+  Elsewhere: [
+    { href: 'https://github.com/Mr-Harsh14', label: 'GitHub', external: true },
+    {
+      href: 'https://www.linkedin.com/in/harsh-maniya-549957203/',
+      label: 'LinkedIn',
+      external: true,
+    },
+    { href: 'mailto:hmaniya00@gmail.com', label: 'Email' },
+  ],
+}
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear()
-
-  const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com/Mr-Harsh14', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/harsh-maniya-549957203/', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:hmaniya00@gmail.com', label: 'Email' }
-  ]
-
-  const footerLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#projects', label: 'Projects' },
-    { href: '#contact', label: 'Contact' }
-  ]
+  const year = new Date().getFullYear()
 
   return (
-    <footer className="relative mt-20">
-      {/* Gradient Divider */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent" />
-
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <Link href="/" className="text-2xl font-bold text-primary">
-              Portfolio
-            </Link>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Final Year Computer Science Student
-              <br />
-              University of Westminster
-              <br />
-              Specialising in Software Development and Machine Learning
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Quick Links</h3>
-            <ul className="space-y-2">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary text-sm transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-semibold mb-4 text-gray-900 dark:text-white">Connect</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <motion.a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                    title={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
-
-            {/* Logo */}
-            <div className="flex justify-start">
-              <div className="relative w-16 h-16">
-                <Image
-                  src="/images/hazz.png"
-                  alt="Harsh Maniya Logo"
-                  fill
-                  sizes="(max-width: 768px) 4rem, 4rem"
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </div>
+    <footer className="relative overflow-hidden border-t border-[color:var(--line)]">
+      <div className="container-x">
+        {/* Big wordmark */}
+        <div className="relative py-16 sm:py-20">
+          <a
+            href="https://hazz.me"
+            className="block font-sans text-display font-medium leading-[0.85] tracking-tightest text-[color:var(--fg)]"
+            aria-label="hazz.me"
+          >
+            <span className="opacity-90">hazz</span>
+            <span className="font-serif italic text-accent-deep dark:text-accent">.</span>
+            <span className="opacity-50">me</span>
+          </a>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
-              © {currentYear} Harsh Maniya. All rights reserved.
+        <div className="grid gap-12 border-t border-[color:var(--line)] py-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 className="eyebrow">Now</h3>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
+              Building, learning, and quietly shipping from London.
             </p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">
-              Built with{' '}
+            <p className="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest">
+              <span className="inline-block h-1.5 w-1.5 animate-pulse-soft rounded-full bg-accent-deep dark:bg-accent" />
+              Open to opportunities
+            </p>
+          </div>
+
+          {Object.entries(links).map(([title, items]) => (
+            <div key={title}>
+              <h3 className="eyebrow">{title}</h3>
+              <ul className="mt-4 space-y-2.5">
+                {items.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      target={'external' in link && link.external ? '_blank' : undefined}
+                      rel={'external' in link && link.external ? 'noopener noreferrer' : undefined}
+                      className="link-underline text-sm text-[color:var(--fg)] hover:text-[color:var(--fg)]"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+          <div>
+            <h3 className="eyebrow">Colophon</h3>
+            <p className="mt-4 text-sm leading-relaxed text-muted">
+              Designed & built with{' '}
               <Link
                 href="https://nextjs.org"
                 target="_blank"
-                className="text-primary hover:text-blue-600 transition-colors"
+                className="link-underline text-[color:var(--fg)]"
               >
                 Next.js
               </Link>
-              {' '}and{' '}
+              ,{' '}
               <Link
                 href="https://tailwindcss.com"
                 target="_blank"
-                className="text-primary hover:text-blue-600 transition-colors"
+                className="link-underline text-[color:var(--fg)]"
               >
-                Tailwind CSS
+                Tailwind
+              </Link>{' '}
+              and{' '}
+              <Link
+                href="https://www.framer.com/motion/"
+                target="_blank"
+                className="link-underline text-[color:var(--fg)]"
+              >
+                Framer Motion
               </Link>
+              .
             </p>
           </div>
+        </div>
+
+        <div className="flex flex-col items-start justify-between gap-4 border-t border-[color:var(--line)] py-8 text-xs uppercase tracking-widest text-muted sm:flex-row sm:items-center">
+          <span className="font-mono">© {year} · Harsh Maniya · aka Hazz</span>
+          <span className="font-mono">hazz.me · v2.0</span>
         </div>
       </div>
     </footer>
   )
-} 
+}
