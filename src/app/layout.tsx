@@ -69,11 +69,6 @@ export const metadata: Metadata = {
     title: 'Hazz — Harsh Maniya · Software Developer & ML Engineer',
     description: 'Building thoughtful products at the intersection of web and AI.',
   },
-  icons: {
-    icon: [{ url: '/images/Hazz.png' }],
-    apple: [{ url: '/images/Hazz.png', sizes: '180x180', type: 'image/png' }],
-    shortcut: [{ url: '/images/Hazz.png', type: 'image/png' }],
-  },
   manifest: '/site.webmanifest',
 }
 
