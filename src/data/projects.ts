@@ -25,26 +25,6 @@ interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'IDEate',
-    description:
-      'An AI-powered platform that automates code reviews. Paste a GitHub repo link, select specialised AI agents for Security, Performance, and UX, and get categorised feedback with inline suggestions in seconds.',
-    technologies: ['React', 'Tailwind CSS', 'Node.js', 'Python', 'Claude', 'LangChain'],
-    slug: 'ideate',
-    category: 'applications',
-    status: 'in-progress',
-    features: [
-      'Multi-agent AI code review with Security, Performance, and UX specialists',
-      'GitHub repo integration to pull files, branches, and metadata',
-      'Categorised, colour-coded feedback with inline suggestions',
-      'Real-time progress tracking and agent-specific toggles',
-      'Structured markdown output with actionable summaries',
-    ],
-    challenges:
-      'Orchestrating multiple AI agents with tailored prompts while keeping review quality consistent across different codebases and languages required careful prompt engineering and agent coordination.',
-    learnings:
-      'Building IDEate is deepening my experience with multi-agent LLM systems, LangChain orchestration, and designing developer tools that make expert-level code review accessible to everyone.',
-  },
-  {
     title: 'Personal Portfolio Website',
     description:
       'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a project showcase.',
@@ -147,5 +127,14 @@ export const projects: Project[] = [
       'Optimising the CNN architecture to achieve strong accuracy on CIFAR-10 while keeping inference fast enough for a real-time web demo was a key trade-off throughout development.',
     learnings:
       'Strengthened my end-to-end ML pipeline skills — from model training and evaluation through to deploying an interactive inference app with Streamlit.',
+  },
+  {
+    title: 'Ideate',
+    description:
+      'A private application I am currently building. Details will be shared once it is ready to launch.',
+    technologies: [],
+    slug: 'ideate',
+    category: 'applications',
+    status: 'in-progress',
   },
 ]
