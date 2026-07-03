@@ -33,17 +33,17 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://hazz.me'),
+  metadataBase: new URL('https://harshmaniya.dev'),
   title: {
     default: 'Hazz — Harsh Maniya · Software Developer & ML Engineer',
-    template: '%s · hazz.me',
+    template: '%s · harshmaniya.dev',
   },
   description:
     'Harsh Maniya (Hazz) is a software developer and machine learning engineer building thoughtful products at the intersection of web and AI.',
   keywords: [
     'Harsh Maniya',
     'Hazz',
-    'hazz.me',
+    'harshmaniya.dev',
     'Software Developer',
     'Machine Learning Engineer',
     'Next.js',
@@ -51,16 +51,16 @@ export const metadata: Metadata = {
     'University of Westminster',
     'London',
   ],
-  authors: [{ name: 'Harsh Maniya', url: 'https://hazz.me' }],
+  authors: [{ name: 'Harsh Maniya', url: 'https://harshmaniya.dev' }],
   creator: 'Harsh Maniya',
   alternates: {
-    canonical: 'https://hazz.me',
+    canonical: 'https://harshmaniya.dev',
   },
   openGraph: {
     title: 'Hazz — Harsh Maniya · Software Developer & ML Engineer',
     description: 'Building thoughtful products at the intersection of web and AI.',
-    url: 'https://hazz.me',
-    siteName: 'hazz.me',
+    url: 'https://harshmaniya.dev',
+    siteName: 'harshmaniya.dev',
     locale: 'en_GB',
     type: 'website',
   },

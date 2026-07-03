@@ -29,13 +29,13 @@ export default function Footer() {
         {/* Big wordmark */}
         <div className="relative py-16 sm:py-20">
           <a
-            href="https://hazz.me"
+            href="https://harshmaniya.dev"
             className="block font-sans text-display font-medium leading-[0.85] tracking-tightest text-[color:var(--fg)]"
-            aria-label="hazz.me"
+            aria-label="harshmaniya.dev"
           >
-            <span className="opacity-90">hazz</span>
+            <span className="opacity-90">harshmaniya</span>
             <span className="font-serif italic text-accent-deep dark:text-accent">.</span>
-            <span className="opacity-50">me</span>
+            <span className="opacity-50">dev</span>
           </a>
         </div>
 
@@ -105,7 +105,7 @@ export default function Footer() {
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-[color:var(--line)] py-8 text-xs uppercase tracking-widest text-muted sm:flex-row sm:items-center">
           <span className="font-mono">© {year} · Harsh Maniya · aka Hazz</span>
-          <span className="font-mono">hazz.me · v2.0</span>
+          <span className="font-mono">harshmaniya.dev · v2.0</span>
         </div>
       </div>
     </footer>

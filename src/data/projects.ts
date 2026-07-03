@@ -19,7 +19,7 @@ export const projects: Project[] = [
     slug: 'portfolio-website',
     category: 'web',
     github: 'https://github.com/Mr-Harsh14/My-Portfolio-v2',
-    demo: 'https://hazz.me',
+    demo: 'https://harshmaniya.dev',
     features: [
       'Responsive design with mobile-first approach',
       'Dark mode support with system preference detection',

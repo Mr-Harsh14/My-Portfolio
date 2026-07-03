@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: '*', allow: '/' }],
-    sitemap: 'https://hazz.me/sitemap.xml',
-    host: 'https://hazz.me',
+    sitemap: 'https://harshmaniya.dev/sitemap.xml',
+    host: 'https://harshmaniya.dev',
   }
 }

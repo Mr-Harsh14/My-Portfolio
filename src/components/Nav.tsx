@@ -39,12 +39,12 @@ export default function Nav() {
         <Link
           href="/"
           className="flex items-center gap-2 pl-2 pr-4 font-mono text-sm tracking-tight"
-          aria-label="hazz.me — home"
+          aria-label="harshmaniya.dev — home"
         >
           <span className="grid h-7 w-7 place-items-center rounded-full bg-accent text-ink-950 font-bold">
             H
           </span>
-          <span className="hidden sm:inline">hazz<span className="text-muted">.me</span></span>
+          <span className="hidden sm:inline">harshmaniya<span className="text-muted">.dev</span></span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
