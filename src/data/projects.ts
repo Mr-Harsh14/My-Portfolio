@@ -14,70 +14,106 @@ interface Project {
 export const projects: Project[] = [
   {
     title: 'Personal Portfolio Website',
-    description: 'A modern, responsive portfolio website built with Next.js 13, TypeScript, and Tailwind CSS. Features dark mode, animations, and optimised performance.',
-    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    slug: 'portfolio-website',
+    description:
+      'A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS. Features dark mode, smooth animations, and a project showcase.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    slug: 'my-portfolio',
     category: 'web',
-    github: 'https://github.com/Mr-Harsh14/My-Portfolio-v2',
-    demo: 'https://harshmaniya.dev',
+    github: 'https://github.com/Mr-Harsh14/My-Portfolio',
+    demo: 'https://hazz.me',
     features: [
       'Responsive design with mobile-first approach',
-      'Dark mode support with system preference detection',
+      'Dark and light mode support',
       'Smooth animations and transitions using Framer Motion',
+      'Project showcase and skills section',
       'Contact form with email integration',
-      'SEO optimized with Next.js 13 features'
     ],
-    challenges: 'Implementing smooth animations while maintaining performance was a key challenge. I used Framer Motion with careful optimization to achieve fluid transitions without compromising load times.',
-    learnings: 'This project helped me master Next.js 13 features, TypeScript type safety, and advanced Tailwind CSS techniques. I also learned about performance optimization and accessibility best practices.'
+    challenges:
+      'Balancing rich animations with fast load times required careful use of Framer Motion and Next.js optimisations to keep the site feeling fluid without sacrificing performance.',
+    learnings:
+      'Strengthened my Next.js App Router workflow, TypeScript patterns, and Tailwind CSS design system skills while building a portfolio that doubles as a live demo of my front-end craft.',
   },
   {
-    title: 'E-commerce Platform',
-    description: 'Full-stack e-commerce solution with features like user authentication, product management, and secure payment integration.',
-    technologies: ['React', 'Node.js', 'MongoDB'],
-    slug: 'ecommerce-platform',
+    title: 'CricHub',
+    description:
+      'A local-first Next.js app for cricket captains to manage weekly Saturday admin — fixtures, squad, availability, XI selection, and WhatsApp messaging in one place.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Prisma', 'SQLite'],
+    slug: 'crichub',
     category: 'web',
-    github: 'https://github.com/Mr-Harsh14/ecommerce-platform',
+    github: 'https://github.com/Mr-Harsh14/CricHub',
     features: [
-      'User authentication and authorization',
-      'Product catalog with search and filtering',
-      'Shopping cart functionality',
-      'Secure payment processing',
-      'Admin dashboard for product management'
+      'Fixture creation with home/away, ground, scorer, and umpire details',
+      'Squad database with roles, wicketkeeper flags, and junior DOB tracking',
+      'Availability collection through fixture-specific links',
+      'XI selection with availability and junior warnings visible',
+      'Copy/paste WhatsApp messages for availability, reminders, and match admin',
+      'Match fee and expense tracking for umpires and scorers',
     ],
-    challenges: 'Implementing secure payment processing and real-time inventory management required careful consideration of edge cases and race conditions.',
-    learnings: 'Gained deep understanding of e-commerce workflows, payment gateway integration, and security best practices.'
+    challenges:
+      'Modelling the many interlocking cricket admin workflows — availability, selection, messaging, and post-match tasks — into a coherent local-first data model took careful domain design.',
+    learnings:
+      'Learned to ship a focused MVP around real user pain points, using Prisma and SQLite for local-first persistence and Vitest for rule and message generation tests.',
   },
   {
-    title: 'Image Classification System',
-    description: 'Deep learning model for image classification using TensorFlow. Achieved 95% accuracy on test dataset.',
-    technologies: ['Python', 'TensorFlow', 'OpenCV'],
-    slug: 'image-classification',
+    title: 'Math Master',
+    description:
+      'A comprehensive mathematics learning platform with role-based access control, interactive quizzes, and progress tracking for students and teachers.',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    slug: 'mathmaster',
+    category: 'web',
+    github: 'https://github.com/Mr-Harsh14/MathMaster',
+    demo: 'https://mathmaster1.vercel.app/',
+    features: [
+      'Students join classes with class codes and take quizzes',
+      'Progress tracking, scores, and leaderboard competition',
+      'Teachers create and manage classes and assessments',
+      'Analytics and performance metrics for student monitoring',
+      'Role-based access control for students and teachers',
+    ],
+    challenges:
+      'Designing a dual-role experience where students and teachers see entirely different interfaces while sharing the same underlying data required thoughtful RBAC and navigation patterns.',
+    learnings:
+      'Gained experience building multi-role educational platforms with class management, quiz authoring, and real-time progress analytics.',
+  },
+  {
+    title: 'PitGenius',
+    description:
+      'An F1 race strategy optimiser that uses machine learning to recommend pre-race pit stop and tyre strategies, then compares predictions against actual race outcomes.',
+    technologies: ['Python', 'Machine Learning', 'Data Visualisation'],
+    slug: 'pitgenius',
     category: 'ml',
-    github: 'https://github.com/Mr-Harsh14/image-classification',
+    github: 'https://github.com/Mr-Harsh14/PitGenius',
+    features: [
+      'Pre-race strategy recommendations from qualifying positions and tyre allocations',
+      'ML-powered pit stop and tyre choice optimisation',
+      'Weather forecast integration for strategy planning',
+      'Strategy quality evaluation and performance reports',
+      'Interactive visualisations of predicted vs actual outcomes',
+    ],
+    challenges:
+      'Combining historical race data, tyre degradation models, and weather forecasts into a single recommendation engine required careful feature engineering and validation against real race results.',
+    learnings:
+      'Deepened my understanding of applied ML for sports analytics, strategy optimisation, and building interpretable reports that compare model predictions to ground truth.',
+  },
+  {
+    title: 'ImageMind',
+    description:
+      'A deep CNN image classifier trained on CIFAR-10, deployed as a Streamlit web app for real-time image classification with confidence scores and top-3 predictions.',
+    technologies: ['Python', 'TensorFlow', 'Streamlit', 'CNN'],
+    slug: 'imagemind',
+    category: 'ml',
+    github: 'https://github.com/Mr-Harsh14/ImageMind',
     demo: 'https://imagemind.streamlit.app/',
     features: [
-      'Custom CNN architecture',
-      'Data augmentation pipeline',
-      'Real-time inference capabilities',
-      'Model performance analysis tools'
+      'Real-time image classification across 10 CIFAR-10 categories',
+      'Confidence scores and top-3 predictions display',
+      'Custom CNN architecture with data augmentation pipeline',
+      'Modern, responsive Streamlit UI',
+      'Mobile-friendly design for on-the-go inference',
     ],
-    challenges: 'Optimizing the model architecture to achieve high accuracy while maintaining reasonable inference times was a significant challenge.',
-    learnings: 'Deepened understanding of CNN architectures, data preprocessing techniques, and model optimization strategies.'
+    challenges:
+      'Optimising the CNN architecture to achieve strong accuracy on CIFAR-10 while keeping inference fast enough for a real-time web demo was a key trade-off throughout development.',
+    learnings:
+      'Strengthened my end-to-end ML pipeline skills — from model training and evaluation through to deploying an interactive inference app with Streamlit.',
   },
-  {
-    title: 'Sentiment Analysis Tool',
-    description: 'NLP-based sentiment analysis tool for social media data. Uses advanced ML techniques for accurate sentiment prediction.',
-    technologies: ['Python', 'NLTK', 'Scikit-learn'],
-    slug: 'sentiment-analysis',
-    category: 'ml',
-    github: 'https://github.com/Mr-Harsh14/sentiment-analysis',
-    features: [
-      'Text preprocessing pipeline',
-      'Multiple ML model implementations',
-      'Real-time sentiment analysis',
-      'Visualization of results'
-    ],
-    challenges: 'Handling various text formats and languages while maintaining accuracy was a major challenge that required sophisticated preprocessing techniques.',
-    learnings: 'Enhanced knowledge of NLP techniques, text preprocessing, and machine learning model selection for text analysis tasks.'
-  }
-] 
+]
