@@ -1,9 +1,21 @@
+export type ProjectCategory = 'web' | 'ml' | 'applications'
+
+export const categoryConfig: Record<
+  ProjectCategory,
+  { label: string; eyebrow: string; detail: string }
+> = {
+  web: { label: 'Web & Software', eyebrow: 'Web', detail: 'Software' },
+  ml: { label: 'Machine Learning', eyebrow: 'ML', detail: 'Machine Learning' },
+  applications: { label: 'Applications', eyebrow: 'Applications', detail: 'Applications' },
+}
+
 interface Project {
   title: string
   description: string
   technologies: string[]
   slug: string
-  category: 'web' | 'ml'
+  category: ProjectCategory
+  status?: 'shipped' | 'in-progress'
   github?: string
   demo?: string
   features?: string[]
@@ -115,5 +127,14 @@ export const projects: Project[] = [
       'Optimising the CNN architecture to achieve strong accuracy on CIFAR-10 while keeping inference fast enough for a real-time web demo was a key trade-off throughout development.',
     learnings:
       'Strengthened my end-to-end ML pipeline skills — from model training and evaluation through to deploying an interactive inference app with Streamlit.',
+  },
+  {
+    title: 'Ideate',
+    description:
+      'A private application I am currently building. Details will be shared once it is ready to launch.',
+    technologies: [],
+    slug: 'ideate',
+    category: 'applications',
+    status: 'in-progress',
   },
 ]

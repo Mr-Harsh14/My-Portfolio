@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
-import { projects } from '@/data/projects'
+import { categoryConfig, projects, type ProjectCategory } from '@/data/projects'
 
 export const metadata: Metadata = {
   title: { absolute: 'Hazz — All projects · hazz.me' },
@@ -23,9 +23,10 @@ export const metadata: Metadata = {
   },
 }
 
-const categories = [
-  { key: 'web' as const, label: 'Web & Software' },
-  { key: 'ml' as const, label: 'Machine Learning' },
+const categories: { key: ProjectCategory; label: string }[] = [
+  { key: 'applications', label: categoryConfig.applications.label },
+  { key: 'web', label: categoryConfig.web.label },
+  { key: 'ml', label: categoryConfig.ml.label },
 ]
 
 export default function ProjectsPage() {
@@ -63,8 +64,8 @@ export default function ProjectsPage() {
                 <span className="font-serif italic text-accent-deep dark:text-accent">.</span>
               </h1>
               <p className="mt-6 max-w-2xl text-pretty text-lg leading-relaxed text-muted">
-                A complete index of things I&apos;ve designed, built, and shipped — across the web
-                and machine learning.
+                A complete index of things I&apos;ve designed, built, and shipped — across
+                applications, the web, and machine learning.
               </p>
             </header>
           </Reveal>
