@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import { SectionHeader } from './About'
-import { projects } from '@/data/projects'
+import { categoryConfig, projects } from '@/data/projects'
 
 export default function Work() {
   const featured = projects[0]
@@ -68,15 +68,22 @@ function FeaturedCard({ project }: { project: (typeof projects)[number] }) {
             </motion.div>
           </div>
           <span className="absolute left-6 top-6 pill">
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-            Featured
+            <span
+              className={`inline-block h-1.5 w-1.5 rounded-full ${
+                project.status === 'in-progress' ? 'bg-amber-500' : 'bg-accent'
+              }`}
+            />
+            {project.status === 'in-progress' ? 'In progress' : 'Featured'}
           </span>
         </div>
 
         {/* Meta */}
         <div className="flex flex-col justify-between gap-8 p-8 sm:p-10 lg:col-span-5">
           <div>
-            <div className="eyebrow">{project.category === 'web' ? 'Web · 2025' : 'ML · 2025'}</div>
+            <div className="eyebrow">
+              {categoryConfig[project.category].eyebrow} ·{' '}
+              {project.status === 'in-progress' ? 'In progress' : '2025'}
+            </div>
             <h3 className="mt-4 font-serif text-4xl italic leading-tight">{project.title}</h3>
             <p className="mt-4 text-base leading-relaxed text-muted">{project.description}</p>
           </div>

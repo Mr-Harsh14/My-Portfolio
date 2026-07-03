@@ -7,7 +7,7 @@ import { use } from 'react'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import Reveal from '@/components/Reveal'
-import { projects } from '@/data/projects'
+import { categoryConfig, projects } from '@/data/projects'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -55,7 +55,7 @@ export default function ProjectPage({ params }: PageProps) {
             <header className="mt-10 grid gap-10 lg:grid-cols-12">
               <div className="lg:col-span-8">
                 <span className="eyebrow">
-                  {project.category === 'web' ? 'Web project' : 'ML project'} · 2025
+                  {categoryConfig[project.category].eyebrow} project · 2025
                 </span>
                 <h1 className="mt-6 font-sans text-mega font-medium tracking-tightest text-balance">
                   {project.title}
@@ -127,13 +127,19 @@ export default function ProjectPage({ params }: PageProps) {
               <div className="sticky top-28 space-y-8">
                 <div>
                   <span className="eyebrow">Category</span>
-                  <p className="mt-2">{project.category === 'web' ? 'Software' : 'Machine Learning'}</p>
+                  <p className="mt-2">{categoryConfig[project.category].detail}</p>
                 </div>
                 <div>
                   <span className="eyebrow">Status</span>
                   <p className="mt-2 inline-flex items-center gap-2">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-deep dark:bg-accent" />
-                    Shipped
+                    <span
+                      className={`inline-block h-1.5 w-1.5 rounded-full ${
+                        project.status === 'in-progress'
+                          ? 'bg-amber-500'
+                          : 'bg-accent-deep dark:bg-accent'
+                      }`}
+                    />
+                    {project.status === 'in-progress' ? 'In progress' : 'Shipped'}
                   </p>
                 </div>
                 <div>

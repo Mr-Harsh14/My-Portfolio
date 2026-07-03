@@ -1,9 +1,21 @@
+export type ProjectCategory = 'web' | 'ml' | 'applications'
+
+export const categoryConfig: Record<
+  ProjectCategory,
+  { label: string; eyebrow: string; detail: string }
+> = {
+  web: { label: 'Web & Software', eyebrow: 'Web', detail: 'Software' },
+  ml: { label: 'Machine Learning', eyebrow: 'ML', detail: 'Machine Learning' },
+  applications: { label: 'Applications', eyebrow: 'Applications', detail: 'Applications' },
+}
+
 interface Project {
   title: string
   description: string
   technologies: string[]
   slug: string
-  category: 'web' | 'ml'
+  category: ProjectCategory
+  status?: 'shipped' | 'in-progress'
   github?: string
   demo?: string
   features?: string[]
@@ -12,6 +24,26 @@ interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: 'IDEate',
+    description:
+      'An AI-powered platform that automates code reviews. Paste a GitHub repo link, select specialised AI agents for Security, Performance, and UX, and get categorised feedback with inline suggestions in seconds.',
+    technologies: ['React', 'Tailwind CSS', 'Node.js', 'Python', 'Claude', 'LangChain'],
+    slug: 'ideate',
+    category: 'applications',
+    status: 'in-progress',
+    features: [
+      'Multi-agent AI code review with Security, Performance, and UX specialists',
+      'GitHub repo integration to pull files, branches, and metadata',
+      'Categorised, colour-coded feedback with inline suggestions',
+      'Real-time progress tracking and agent-specific toggles',
+      'Structured markdown output with actionable summaries',
+    ],
+    challenges:
+      'Orchestrating multiple AI agents with tailored prompts while keeping review quality consistent across different codebases and languages required careful prompt engineering and agent coordination.',
+    learnings:
+      'Building IDEate is deepening my experience with multi-agent LLM systems, LangChain orchestration, and designing developer tools that make expert-level code review accessible to everyone.',
+  },
   {
     title: 'Personal Portfolio Website',
     description:
