@@ -17,12 +17,10 @@ export default function Work() {
           <div className="flex flex-wrap items-end justify-between gap-6">
             <SectionHeader eyebrow="03 · Work" title="Selected projects." />
             <Link
-              href="https://github.com/Mr-Harsh14"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/projects"
               className="link-underline font-mono text-xs uppercase tracking-widest text-muted hover:text-[color:var(--fg)]"
             >
-              All on GitHub →
+              View all projects →
             </Link>
           </div>
         </Reveal>
