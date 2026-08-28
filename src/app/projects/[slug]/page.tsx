@@ -133,7 +133,7 @@ export default function ProjectPage({ params }: PageProps) {
                   <span className="eyebrow">Status</span>
                   <p className="mt-2 inline-flex items-center gap-2">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent-deep dark:bg-accent" />
-                    Shipped
+                    {project.current ? 'Currently working on' : 'Shipped'}
                   </p>
                 </div>
                 <div>

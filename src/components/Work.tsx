@@ -69,7 +69,7 @@ function FeaturedCard({ project }: { project: (typeof projects)[number] }) {
           </div>
           <span className="absolute left-6 top-6 pill">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-            Featured
+            {project.current ? 'Currently working on' : 'Featured'}
           </span>
         </div>
 
@@ -126,9 +126,17 @@ function ProjectRow({ project, index }: { project: (typeof projects)[number]; in
         </span>
 
         <div className="col-span-12 sm:col-span-5">
-          <h3 className="font-serif text-2xl italic leading-tight sm:text-3xl">
-            {project.title}
-          </h3>
+          <div className="flex items-center gap-3">
+            <h3 className="font-serif text-2xl italic leading-tight sm:text-3xl">
+              {project.title}
+            </h3>
+            {project.current && (
+              <span className="pill shrink-0">
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+                Currently working on
+              </span>
+            )}
+          </div>
         </div>
 
         <p className="col-span-12 hidden text-sm text-muted sm:col-span-3 sm:block">

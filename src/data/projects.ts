@@ -1,4 +1,4 @@
-interface Project {
+export interface Project {
   title: string
   description: string
   technologies: string[]
@@ -9,9 +9,29 @@ interface Project {
   features?: string[]
   challenges?: string
   learnings?: string
+  current?: boolean
 }
 
 export const projects: Project[] = [
+  {
+    title: 'Ideate',
+    description:
+      'A desktop-first idea studio with a custom spatial board for capturing and arranging ideas. An iOS companion (Ideate — Capture) dumps thoughts in from the phone, and everything syncs over Supabase.',
+    technologies: ['Tauri', 'React', 'Supabase', 'iOS'],
+    slug: 'ideate',
+    category: 'web',
+    current: true,
+    features: [
+      'Desktop-first studio built with Tauri and React',
+      'Custom spatial board for laying out and connecting ideas',
+      'iOS capture companion (Ideate — Capture) for catching thoughts on the go',
+      'Supabase sync between desktop and phone',
+    ],
+    challenges:
+      'Designing a spatial board that feels native on desktop while staying in sync with a lightweight iOS capture app meant treating the board as the source of truth and the phone as an inbox.',
+    learnings:
+      'Learned how far a Tauri + React desktop shell can go for a spatial UI, and how to keep a capture companion small when the real product lives on the board.',
+  },
   {
     title: 'Personal Portfolio Website',
     description:
