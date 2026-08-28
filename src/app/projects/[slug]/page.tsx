@@ -150,7 +150,7 @@ export default function ProjectPage({ params }: PageProps) {
 
                 {project.features && (
                   <>
-                    <h2>What's inside</h2>
+                    <h2>What&apos;s inside</h2>
                     <ul>
                       {project.features.map((f, i) => (
                         <li key={i}>{f}</li>

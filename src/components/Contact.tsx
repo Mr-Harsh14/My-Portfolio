@@ -23,13 +23,13 @@ export default function Contact() {
             <Reveal delay={0.05}>
               <h2 className="mt-6 font-sans text-mega font-medium tracking-tightest text-balance">
                 Got an idea?{' '}
-                <span className="font-serif italic text-accent-deep dark:text-accent">Let's build it.</span>
+                <span className="font-serif italic text-accent-deep dark:text-accent">Let&apos;s build it.</span>
               </h2>
             </Reveal>
 
             <Reveal delay={0.1}>
               <p className="mt-8 max-w-xl text-pretty text-lg leading-relaxed text-muted">
-                I'm currently open to engineering roles, freelance collaborations, and the
+                I&apos;m currently open to engineering roles, freelance collaborations, and the
                 occasional weekend prototype. Drop me a line — I read everything.
               </p>
             </Reveal>

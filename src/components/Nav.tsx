@@ -100,7 +100,7 @@ export default function Nav() {
             href="#contact"
             className="hidden md:inline-flex items-center gap-1.5 rounded-full bg-[color:var(--fg)] px-4 py-1.5 text-sm font-medium text-[color:var(--bg)] transition-opacity hover:opacity-90"
           >
-            Let's talk
+            Let&apos;s talk
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M7 17L17 7M9 7h8v8" />
             </svg>
@@ -152,7 +152,7 @@ export default function Nav() {
                 onClick={() => setOpen(false)}
                 className="mt-2 rounded-2xl bg-[color:var(--fg)] px-4 py-3 text-base font-medium text-[color:var(--bg)] text-center"
               >
-                Let's talk →
+                Let&apos;s talk →
               </Link>
             </nav>
           </motion.div>

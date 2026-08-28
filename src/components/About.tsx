@@ -29,11 +29,11 @@ export default function About() {
             <Card className="h-full p-8 sm:p-10">
               <Eyebrow>The story so far</Eyebrow>
               <p className="mt-4 font-serif text-2xl leading-snug sm:text-3xl">
-                I'm Harsh — most people just call me <span className="italic text-accent-deep dark:text-accent">Hazz</span>. A Computer Science graduate from the{' '}
+                I&apos;m Harsh — most people just call me <span className="italic text-accent-deep dark:text-accent">Hazz</span>. A Computer Science graduate from the{' '}
                 <span className="italic">University of Westminster</span>, where I split my focus between modern web engineering and applied machine learning. Today I build full-stack interfaces, train models, and chase the unfair joy of shipping.
               </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-                Outside of work I'm a quiet evangelist for thoughtful UI, espresso pulled too long, and reading way more papers than I have time to implement.
+                Outside of work I&apos;m a quiet evangelist for thoughtful UI, espresso pulled too long, and reading way more papers than I have time to implement.
               </p>
 
               <div className="mt-10 grid grid-cols-3 gap-6 border-t border-[color:var(--line)] pt-8">
@@ -65,7 +65,7 @@ export default function About() {
                   />
                 </div>
                 <div className="mt-4 font-serif text-xl italic">
-                  Hi, I'm <span className="text-accent-deep dark:text-accent">Hazz</span> 👋
+                  Hi, I&apos;m <span className="text-accent-deep dark:text-accent">Hazz</span> 👋
                 </div>
                 <div className="mt-1 text-sm text-muted">Nice to meet you.</div>
               </div>
