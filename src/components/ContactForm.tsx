@@ -102,7 +102,7 @@ export default function ContactForm() {
 
       {status === 'success' && (
         <p className="rounded-2xl border border-accent-deep/30 bg-accent-soft/30 px-4 py-3 text-sm text-accent-deep dark:text-accent">
-          Message sent. I'll be in touch soon — thanks for reaching out.
+          Message sent. I&apos;ll be in touch soon — thanks for reaching out.
         </p>
       )}
 
